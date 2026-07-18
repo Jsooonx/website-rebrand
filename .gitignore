@@ -1,0 +1,21 @@
+# Personal agent and skill workspace files
+.agents/
+.agent/
+.codex/
+.cairn/
+.cairn.json
+AGENTS.md
+skills/
+personal-agent-skills/
+docs/
+
+# Local editor and machine settings
+.vscode/
+.idea/
+*.code-workspace
+*.local
+.env
+.env.*
+!.env.example
+Thumbs.db
+.DS_Store
