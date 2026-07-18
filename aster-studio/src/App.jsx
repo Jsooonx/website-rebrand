@@ -24,14 +24,7 @@ function ArrowUpRight() {
 }
 
 function AsterMark() {
-  return (
-    <span className="aster-mark" aria-hidden="true">
-      <i />
-      <i />
-      <i />
-      <i />
-    </span>
-  )
+  return <img className="aster-mark" src="/aster-mark.svg" alt="" aria-hidden="true" />
 }
 
 function CountUp({ target, suffix = '', reduceMotion }) {

@@ -2,60 +2,58 @@
 
 ## Brand foundation
 
-**Aster Studio** adalah brand fiktif untuk portfolio seorang independent digital
-designer dan creative developer. Studio ini membantu founder, bisnis kreatif,
-dan produk digital tahap awal tampil lebih jelas, meyakinkan, dan berkarakter
-melalui identitas visual serta website yang dirancang dengan teliti.
+**Aster Studio** is a fictional portfolio brand for an independent digital
+designer and creative developer. It helps founders, creative businesses, and
+early-stage digital products become clearer, more convincing, and more distinct
+through carefully crafted identities and websites.
 
-Nama **Aster** mengambil inspirasi dari bunga aster: tampak sederhana dari jauh,
-namun memiliki banyak detail ketika diperhatikan. Prinsip itu menjadi fondasi
-brand: komunikasi yang tenang dan mudah dipahami, dengan kualitas craft yang
-terasa dalam setiap detail.
+The name **Aster** comes from the aster flower: simple from a distance, yet rich
+in detail when viewed closely. The brand follows the same principle—quiet,
+accessible communication with craft that reveals itself in the details.
 
-**Tagline utama:** “Distinct digital identities, made with care.”
+**Primary tagline:** “Distinct digital identities, made with care.”
 
-**Tagline alternatif:** “Make the useful unforgettable.”
+**Alternative tagline:** “Make the useful unforgettable.”
 
 ### Purpose
 
-Membantu ide yang belum jelas menjadi identitas digital yang fokus, ekspresif,
-dan siap tumbuh.
+To turn unclear ideas into focused, expressive digital identities that are
+ready to grow.
 
 ### Positioning
 
-Aster Studio berdiri di pertemuan antara strategi brand, desain editorial, dan
-pengembangan web modern. Ia bukan agency besar yang terasa jauh, juga bukan
-sekadar jasa membuat halaman visual; Aster adalah partner desain yang dekat,
-kritis, dan hands-on.
+Aster Studio sits between brand strategy, editorial design, and modern web
+development. It is neither a distant large agency nor simply a visual page
+making service; Aster is a close, critical, hands-on design partner.
 
 ### Audience
 
-- Founder startup dan produk digital yang ingin menaikkan kualitas brand.
-- Bisnis kreatif, hospitality, dan lifestyle dengan cerita yang kuat.
-- Tim kecil yang membutuhkan identitas serta website premium.
-- Recruiter dan kolaborator yang menilai kemampuan desain melalui portfolio.
+- Startup founders and digital products ready to raise their brand quality.
+- Creative, hospitality, and lifestyle businesses with a strong story.
+- Small teams that need a premium identity and website.
+- Recruiters and collaborators evaluating design craft through the portfolio.
 
 ### Brand pillars
 
-| Pilar | Arti |
+| Pillar | Meaning |
 | --- | --- |
-| Clarity before decoration | Setiap keputusan visual harus punya tujuan. |
-| Small-team attention | Klien berbicara langsung dengan orang yang mengerjakan. |
-| Editorial craft | Tipografi, ritme, dan narasi diperlakukan sama pentingnya dengan UI. |
-| Built to perform | Konsep diwujudkan menjadi web yang cepat, responsif, dan mudah dirawat. |
+| Clarity before decoration | Every visual decision needs a purpose. |
+| Small-team attention | Clients speak directly with the people doing the work. |
+| Editorial craft | Typography, rhythm, and narrative matter as much as UI. |
+| Built to perform | Ideas become fast, responsive, maintainable websites. |
 
-## Personality and verbal identity
+## Personality and voice
 
-Aster terdengar seperti creative director yang hangat: tenang, tajam, ingin
-tahu, dan tidak berisik. Percaya diri tanpa menggurui. Bahasa harus ringkas,
-aktif, spesifik, dan manusiawi.
+Aster sounds like a warm creative director: calm, sharp, curious, and never
+overly loud. It is confident without being patronising. Language should be
+concise, active, specific, and human.
 
-| Trait | Lakukan | Hindari |
+| Trait | Do | Avoid |
 | --- | --- | --- |
-| Thoughtful | Jelaskan alasan di balik keputusan | Klaim besar tanpa bukti |
-| Warm | Gunakan ajakan yang tulus | Bahasa korporat yang kaku |
-| Precise | Pilih kata kerja aktif dan konkret | Jargon desain yang berlebihan |
-| Expressive | Pakai imagery yang ringan dan visual | Hiperbola atau gimmick |
+| Thoughtful | Explain the reason behind a decision | Large claims without evidence |
+| Warm | Make a sincere invitation | Rigid corporate language |
+| Precise | Choose active, concrete verbs | Excessive design jargon |
+| Expressive | Use light visual imagery | Hyperbole and gimmicks |
 
 ### Copy examples
 
@@ -64,52 +62,52 @@ aktif, spesifik, dan manusiawi.
   and websites people remember.”
 - **Primary CTA:** “Start a conversation”
 - **Secondary CTA:** “View selected work”
-- **Microcopy:** “A closer look”, “Made for momentum”, “Good things take
+- **Microcopy:** “A closer look”, “Made for momentum”, and “Good things take
   clarity”.
 
 ## Visual direction
 
-Gunakan editorial minimalism dengan aksen optimistis. Ruang kosong memberi
-napas dan menjadikan karya sebagai fokus. Warna hangat, bentuk organik, serta
-tekstur ringan mencegah hasilnya terasa terlalu teknis.
+Use editorial minimalism with an optimistic accent. White space gives the work
+room to breathe and keeps it at the centre. Warm colour, organic forms, and
+light texture keep the result from feeling overly technical.
 
 **Keywords:** editorial, sculptural, sun-warmed, tactile, precise, optimistic,
 quietly bold.
 
 ### Art direction
 
-- Buat komposisi asimetris yang tetap disiplin terhadap grid.
-- Biarkan visual proyek berukuran besar dan minim treatment.
-- Pakai bentuk 3D lembut, crop tekstur, atau ilustrasi abstrak sebagai aksen.
-- Utamakan cahaya natural, material nyata, arsitektur, dan detail proses.
-- Hindari mockup generik, gradient neon, serta dekorasi tanpa fungsi.
+- Build asymmetrical compositions that remain disciplined by a grid.
+- Let project visuals be large and lightly treated.
+- Use soft 3D forms, textured crops, or abstract illustration as accents.
+- Prioritise natural light, real materials, architecture, and process detail.
+- Avoid generic mockups, neon gradients, and decoration without a function.
 
-## Color system
+## Colour system
 
-| Peran | Nama | Hex | Penggunaan |
+| Role | Name | Hex | Use |
 | --- | --- | --- | --- |
-| Primary ink | Midnight | \`#17202A\` | Teks, bidang gelap, footer |
-| Base canvas | Warm Paper | \`#F6F1E8\` | Latar utama |
-| Primary accent | Aster Blue | \`#5C78F2\` | CTA, link aktif, highlight |
-| Secondary accent | Apricot | \`#F4B18B\` | Panel dan aksen editorial |
-| Signal accent | Moss | \`#637C63\` | Metadata, detail kecil, status |
-| Contrast surface | Cloud | \`#FFFFFF\` | Card dan layer terang |
+| Primary ink | Midnight | `#17202A` | Text, dark fields, footer |
+| Base canvas | Warm Paper | `#F6F1E8` | Main background |
+| Primary accent | Aster Blue | `#5C78F2` | CTA, active links, highlight |
+| Secondary accent | Apricot | `#F4B18B` | Panels and editorial accents |
+| Signal accent | Moss | `#637C63` | Metadata, small detail, status |
+| Contrast surface | Cloud | `#FFFFFF` | Cards and light layers |
 
-Midnight dan Warm Paper adalah fondasi. Aster Blue dipakai untuk fokus dan
-interaksi, maksimal sekitar 15% dalam satu viewport. Apricot dan Moss menjadi
-aksen bergantian, bukan warna navigasi utama.
+Midnight and Warm Paper are the foundation. Aster Blue directs attention and
+interaction. Apricot and Moss are alternating accents, not primary navigation
+colours.
 
 ## Typography
 
 ### Display: Instrument Serif
 
-Untuk headline, quote, dan angka besar. Terasa editorial, berkelas, dan sedikit
-ekspresif. Atur line-height rapat, sekitar \`0.95–1.05\`.
+Use for headlines, quotes, and large numerals. It should feel editorial,
+elegant, and gently expressive. Keep line-height tight, around `0.95–1.05`.
 
 ### UI and body: Inter
 
-Untuk navigasi, body copy, metadata, dan tombol. Body memakai weight 400;
-label dan CTA memakai 500–600. Atur line-height body sekitar \`1.5–1.65\`.
+Use for navigation, body copy, metadata, and buttons. Body copy uses weight
+400; labels and CTAs use 500–600. Keep body line-height around `1.5–1.65`.
 
 | Level | Font | Desktop | Mobile |
 | --- | --- | --- | --- |
@@ -121,85 +119,81 @@ label dan CTA memakai 500–600. Atur line-height body sekitar \`1.5–1.65\`.
 
 ## Logo system
 
-Logo utama adalah wordmark **Aster Studio** dengan serif elegan dan
-letter-spacing sedikit rapat. Brand mark berupa empat kelopak abstrak dari oval
-membulat—jangan menggunakan bunga literal.
+The main logo is the **Aster Studio** wordmark, paired with the Aster mark:
+four abstract petals around a central dot on a rounded Midnight tile. The same
+mark is used in the site navigation and browser favicon.
 
-- Gunakan wordmark Midnight pada Warm Paper atau Cloud.
-- Gunakan wordmark putih hanya di atas Midnight.
-- Brand mark dapat dipakai sendiri untuk favicon, loader, atau watermark.
-- Clear space minimum setinggi karakter “A” di seluruh sisi logo.
-- Jangan stretch, memberi shadow, meng-outline logo, atau menaruhnya di atas
-  gambar ramai tanpa bidang pelindung.
+- Use the Midnight wordmark on Warm Paper or Cloud.
+- Use a white wordmark only on Midnight.
+- The mark can stand alone for the favicon, loader, or watermark.
+- Keep clear space at least the height of the letter “A” on every side.
+- Do not stretch, shadow, outline, or place the logo over a busy image without
+  a protective surface.
 
 ## Interface and motion
 
-Pengalaman harus cepat, tactile, dan terkendali. Motion membantu orientasi,
-bukan menjadi atraksi utama.
+The experience should feel fast, tactile, and controlled. Motion supports
+orientation; it is never the attraction on its own.
 
-- Hover: underline bergerak, perubahan warna, atau image zoom maksimal \`1.03\`.
-- Transition: 180–320ms dengan \`cubic-bezier(0.22, 1, 0.36, 1)\`.
-- Reveal on scroll hanya per section dan wajib mendukung
-  \`prefers-reduced-motion\`.
-- Tombol berbentuk pill dengan padding lega, state hover jelas, dan focus ring
-  keyboard yang terlihat.
-- Card proyek memakai radius 8–12px serta shadow sangat halus atau tanpa
-  shadow.
-- Jaga rasio kontras teks, terutama di atas Aster Blue dan Apricot.
+- Hover states use moving underlines, colour shifts, or image zooms up to
+  `1.03`.
+- Transitions use 180–320ms with `cubic-bezier(0.22, 1, 0.36, 1)`.
+- Scroll reveals happen by section and support `prefers-reduced-motion`.
+- Buttons use roomy pill shapes, clear hover states, and visible keyboard focus.
+- Project cards use 8–12px radii with a very soft shadow or no shadow.
+- Maintain strong text contrast, especially over Aster Blue and Apricot.
 
-## Website information architecture
+## Website structure
 
 ### Home
 
-1. Hero: positioning, CTA ke karya, CTA kontak.
-2. Selected work: tiga sampai lima studi kasus dengan visual besar.
-3. Manifesto singkat: cara Aster bekerja.
-4. Services: brand direction, visual identity, website design/build.
-5. Testimonial atau proof point.
-6. CTA penutup.
+1. Hero: positioning, work CTA, and contact CTA.
+2. Selected work: three to five case studies with large visuals.
+3. A short manifesto: how Aster works.
+4. Services: brand direction, visual identity, and website design/build.
+5. Testimonial or proof point.
+6. Closing CTA.
 
 ### Work index
 
-Grid editorial dengan filter opsional: Identity, Digital, Strategy. Setiap card
-memuat nama klien, kategori, tahun, dan visual yang kuat.
+An editorial grid with optional Identity, Digital, and Strategy filters. Each
+card includes the client name, category, year, and a strong visual.
 
 ### Case study
 
-Mulai dari visual utama dan ringkasan peran, industri, serta hasil. Lanjutkan
-dengan problem, direction, proses, output, dan dampak. Satu section untuk satu
-ide kuat.
+Begin with the key visual and a summary of role, industry, and outcome. Then
+move through the problem, direction, process, output, and impact. Each section
+should carry one strong idea.
 
 ### About
 
-Foto atau potret abstrak, bio ringkas, prinsip kerja, kemampuan, serta link
-sosial. Tetap personal, tetapi fokus pada nilai bagi klien.
+Use a portrait or abstract image, a short bio, working principles, capabilities,
+and social links. Keep it personal, but focused on client value.
 
 ### Contact
 
-Headline: “Have something worth making?” Sertakan email, form sederhana,
-perkiraan waktu respons, dan link LinkedIn atau Instagram.
+Headline: “Have something worth making?” Include an email address, simple form,
+expected response time, and LinkedIn or Instagram links.
 
-## Dummy portfolio projects
+## Fictional portfolio projects
 
-| Proyek | Industri | Brief |
+| Project | Industry | Brief |
 | --- | --- | --- |
-| Kora | Fintech | Identitas dan website aplikasi keuangan bersama yang membuat budgeting terasa manusiawi. |
-| Sola House | Hospitality | Rebrand hotel butik tropis, terinspirasi cahaya sore dan arsitektur lokal. |
-| Relay | SaaS | Brand direction serta marketing site platform kolaborasi tim kreatif. |
-| Mysa | Wellness | Packaging, identitas, dan e-commerce untuk home fragrance modern. |
+| Kora | Fintech | An identity and website for a shared-finance product that makes budgeting feel human. |
+| Sola House | Hospitality | A tropical boutique hotel rebrand inspired by afternoon light and local architecture. |
+| Relay | SaaS | Brand direction and a marketing site for a creative-team collaboration platform. |
+| Mysa | Wellness | Packaging, identity, and e-commerce for a modern home-fragrance brand. |
 
 ## Accessibility baseline
 
-- Semua gambar informatif wajib punya alt text deskriptif.
-- Informasi tidak boleh hanya dibedakan oleh warna.
-- Teks kecil minimal 12px dan hanya untuk metadata non-esensial.
-- Semua navigasi, CTA, dan form harus bisa diakses keyboard.
-- Rancang mobile terlebih dahulu; desktop memperluas komposisi, bukan
-  menambah kerumitan.
+- Every informative image needs descriptive alt text.
+- Information must not rely on colour alone.
+- Small text should be at least 12px and limited to non-essential metadata.
+- Navigation, CTAs, and forms must be keyboard accessible.
+- Design mobile first; desktop should expand the composition, not its complexity.
 
 ## One-line implementation brief
 
-Bangun Aster Studio sebagai portfolio editorial yang tenang dan berani: ruang
-digital yang membuat setiap proyek terasa bernilai, terkurasi, dan dibuat dengan
-perhatian tinggi terhadap detail.
-
+Build Aster Studio as a calm but bold editorial portfolio: a digital space that
+makes each project feel valuable, curated, and made with close attention to
+detail.

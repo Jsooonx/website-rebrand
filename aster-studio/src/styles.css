@@ -54,12 +54,7 @@ a { color: inherit; text-decoration: none; }
 .brand { display: inline-flex; align-items: center; gap: 0.55rem; width: max-content; }
 .brand span:last-child { font-size: 0.63rem; line-height: 0.92; letter-spacing: -0.06em; }
 
-.aster-mark { width: 1rem; height: 1rem; position: relative; display: inline-block; }
-.aster-mark i { position: absolute; width: 0.42rem; height: 0.42rem; border-radius: 100% 0 100% 100%; background: #f4b18b; }
-.aster-mark i:nth-child(1) { left: 0.29rem; top: 0; transform: rotate(45deg); }
-.aster-mark i:nth-child(2) { right: 0; top: 0.29rem; transform: rotate(135deg); }
-.aster-mark i:nth-child(3) { bottom: 0; left: 0.29rem; transform: rotate(225deg); }
-.aster-mark i:nth-child(4) { left: 0; top: 0.29rem; transform: rotate(315deg); }
+.aster-mark { width: 1rem; height: 1rem; display: block; flex: 0 0 auto; border-radius: 0.23rem; }
 
 .nav-location { margin: 0; justify-self: center; color: rgba(246, 241, 232, 0.68); }
 .contact-link {
