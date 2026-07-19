@@ -18,7 +18,8 @@ is documented in [BRANDING.md](BRANDING.md).
   around the Aster point of view.
 - A sticky “In Practice” sequence, stats, testimonials, FAQ, and contact
   footer.
-- Motion that becomes simpler for visitors who prefer reduced motion.
+- Lenis-powered smooth scrolling, with motion simplified for visitors who
+  prefer reduced motion.
 
 ## Site structure
 

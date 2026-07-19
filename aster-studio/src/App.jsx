@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useInView, useReducedMotion, useScroll, useTransform } from 'framer-motion'
+import Lenis from 'lenis'
 
 const rise = {
   hidden: { opacity: 0, y: 18, filter: 'blur(8px)' },
@@ -207,6 +208,29 @@ export default function App() {
   const footerPhotoY = useTransform(footerScrollProgress, [0, 1], [0, -64])
   const activePricingPlans = pricingPlans[pricingMode]
   const testimonialMotionClass = shouldReduceMotion ? ' is-static' : testimonialsInView ? (testimonialsLooping ? ' is-looping' : ' is-entering') : ''
+
+  useEffect(() => {
+    if (shouldReduceMotion) return undefined
+
+    const lenis = new Lenis({
+      duration: 1.05,
+      smoothWheel: true,
+      syncTouch: false,
+      wheelMultiplier: 0.9,
+      anchors: true,
+    })
+    let frameId
+    const animate = (time) => {
+      lenis.raf(time)
+      frameId = requestAnimationFrame(animate)
+    }
+    frameId = requestAnimationFrame(animate)
+
+    return () => {
+      cancelAnimationFrame(frameId)
+      lenis.destroy()
+    }
+  }, [shouldReduceMotion])
 
   useEffect(() => {
     if (!testimonialsInView || shouldReduceMotion) return undefined
