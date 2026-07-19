@@ -28,6 +28,30 @@ function AsterMark() {
   return <img className="aster-mark" src="/aster-mark.svg" alt="" aria-hidden="true" />
 }
 
+function StackframePreview({ reduceMotion }) {
+  return (
+    <motion.aside
+      className="stackframe-preview"
+      aria-label="Stackframe template preview"
+      initial={reduceMotion ? false : { opacity: 0, y: 12, filter: 'blur(5px)' }}
+      animate={reduceMotion ? undefined : { opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{ delay: 0.5, duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <a className="stackframe-preview-back" href="https://stackframe.my.id/#library">
+        <span>Back to template</span>
+        <ArrowUpRight />
+      </a>
+      <a
+        className="stackframe-preview-mark"
+        href="https://stackframe.my.id"
+        aria-label="Open Stackframe"
+      >
+        <img src="/stackframe-mark.svg" alt="" aria-hidden="true" />
+      </a>
+    </motion.aside>
+  )
+}
+
 function CountUp({ target, suffix = '', reduceMotion }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.7 })
@@ -170,6 +194,7 @@ export default function App() {
   const [pricingMode, setPricingMode] = useState('oneTime')
   const [openFaq, setOpenFaq] = useState(null)
   const [testimonialsLooping, setTestimonialsLooping] = useState(false)
+  const [isStackframePreview, setIsStackframePreview] = useState(false)
   const testimonialsInView = useInView(testimonialsSectionRef, { once: true, amount: 0.18 })
   const { scrollYProgress } = useScroll({
     target: heroImageRef,
@@ -238,9 +263,14 @@ export default function App() {
     return () => window.clearTimeout(loopTimer)
   }, [shouldReduceMotion, testimonialsInView])
 
+  useEffect(() => {
+    setIsStackframePreview(new URLSearchParams(window.location.search).get('preview') === 'stackframe')
+  }, [])
+
   return (
     <main id="top" className="site-shell">
       <div className="grain" aria-hidden="true" />
+      {isStackframePreview && <StackframePreview reduceMotion={shouldReduceMotion} />}
 
       <nav className="nav" aria-label="Primary navigation">
         <motion.a className="brand" href="#" variants={rise} initial="hidden" animate="visible" custom={0.08}>
