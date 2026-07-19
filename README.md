@@ -10,6 +10,7 @@ and expressive digital experiences.
 | # | Website | Description | Reference |
 | --- | --- | --- | --- |
 | 1 | Aster Studio | A fictional independent creative practice focused on brand direction and expressive digital experiences. | [Porto Template / Framer](https://porto-template.framer.website/) |
+| 2 | Radian Works | A fictional embedded AI product studio for teams turning complex technology into clear, shippable products. | [AgenAI / Framer](https://agen-ai.framer.website/) |
 
 This rebrand experiment was developed collaboratively with Codex AI in
 ChatGPT, using the GPT-5.6 Terra model.
