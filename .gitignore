@@ -10,6 +10,7 @@ personal-agent-skills/
 docs/
 
 # Local editor and machine settings
+**/node_modules/
 .vscode/
 .idea/
 *.code-workspace
