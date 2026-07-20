@@ -79,6 +79,26 @@ function Mark() {
   return <BrandMark />
 }
 
+function StackframePreview({ reducedMotion }: { reducedMotion: boolean | null }) {
+  return (
+    <motion.aside
+      className="stackframe-preview"
+      aria-label="Stackframe template preview"
+      initial={reducedMotion ? false : { opacity: 0, y: 12, filter: 'blur(5px)' }}
+      animate={reducedMotion ? undefined : { opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{ delay: 0.5, duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <a className="stackframe-preview-back" href="https://stackframe.my.id/#library">
+        <span>Back to template</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a className="stackframe-preview-mark" href="https://stackframe.my.id" aria-label="Open Stackframe">
+        <img src="/stackframe-mark.svg" alt="" aria-hidden="true" />
+      </a>
+    </motion.aside>
+  )
+}
+
 /** About proof combines a one-shot count-up with the partner-logo marquee. */
 function AboutSection() {
   const ref = useRef<HTMLElement>(null)
@@ -380,11 +400,17 @@ function Footer() {
 function App() {
   const reducedMotion = useReducedMotion()
   const navFloating = useFloatingNavigation()
+  const [isStackframePreview, setIsStackframePreview] = useState(false)
 
   useLenisScroll(reducedMotion)
 
+  useEffect(() => {
+    setIsStackframePreview(new URLSearchParams(window.location.search).get('preview') === 'stackframe')
+  }, [])
+
   return (
     <main>
+      {isStackframePreview && <StackframePreview reducedMotion={reducedMotion} />}
       <section id="top" className="relative isolate m-2 min-h-[min(760px,calc(100svh-28px))] overflow-hidden rounded-[38px] bg-[#e7e4de] max-[680px]:m-[5px] max-[680px]:min-h-[700px] max-[680px]:rounded-[26px]" aria-labelledby="hero-title">
         <div className="hero-ring" aria-hidden="true" />
         <div className="pointer-events-none absolute -z-20 top-[-56%] left-[-12%] h-[95%] w-[60%] rotate-[-28deg] rounded-full bg-[#8e8cff]/16 blur-[76px]" aria-hidden="true" />
