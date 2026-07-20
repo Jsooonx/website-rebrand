@@ -336,9 +336,30 @@ function Clock() {
   }).format(now)
 }
 
+function StackframePreview({ reduceMotion }: { reduceMotion: boolean | null }) {
+  return (
+    <motion.aside
+      className="stackframe-preview"
+      aria-label="Stackframe template preview"
+      initial={reduceMotion ? false : { opacity: 0, y: 12, filter: 'blur(5px)' }}
+      animate={reduceMotion ? undefined : { opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{ delay: 0.5, duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <a className="stackframe-preview-back" href="https://stackframe.my.id/#library">
+        <span>Back to template</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a className="stackframe-preview-mark" href="https://stackframe.my.id" aria-label="Open Stackframe">
+        <img src="/stackframe-mark.svg" alt="" aria-hidden="true" />
+      </a>
+    </motion.aside>
+  )
+}
+
 function App() {
   const reduceMotion = useReducedMotion()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isStackframePreview, setIsStackframePreview] = useState(false)
   const lenisRef = useRef<Lenis | null>(null)
   const menuTriggerRef = useRef<HTMLButtonElement>(null)
   const menuPanelRef = useRef<HTMLDivElement>(null)
@@ -360,6 +381,10 @@ function App() {
       lenis.destroy()
     }
   }, [reduceMotion])
+
+  useEffect(() => {
+    setIsStackframePreview(new URLSearchParams(window.location.search).get('preview') === 'stackframe')
+  }, [])
 
   useEffect(() => {
     if (!menuOpen) return undefined
@@ -414,6 +439,7 @@ function App() {
 
   return (
     <main>
+      {isStackframePreview && <StackframePreview reduceMotion={reduceMotion} />}
       <section className={`hero ${menuOpen ? 'menu-open' : ''}`} id="top" aria-labelledby="hero-title">
         <div className="hero__art" aria-hidden="true" />
         <div className="hero__veil" aria-hidden="true" />
