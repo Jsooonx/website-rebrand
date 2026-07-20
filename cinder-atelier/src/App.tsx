@@ -393,7 +393,7 @@ function App() {
     document.documentElement.style.overflow = 'hidden'
     document.documentElement.style.touchAction = 'none'
     window.addEventListener('keydown', onKeyDown)
-    const frame = window.requestAnimationFrame(() => menuPanelRef.current?.querySelector<HTMLElement>('a[href]')?.focus())
+    const frame = window.requestAnimationFrame(() => menuPanelRef.current?.querySelector<HTMLElement>('a[href]')?.focus({ preventScroll: true }))
 
     return () => {
       window.cancelAnimationFrame(frame)
@@ -425,20 +425,16 @@ function App() {
           </motion.button>
         </nav>
 
-        <AnimatePresence initial={false}>
-          {menuOpen && (
-            <motion.aside id="site-menu" className="site-menu" role="dialog" aria-modal="true" aria-label="Site menu" initial={false} animate={{ opacity: 1 }} exit={reduceMotion ? undefined : { opacity: 0 }} transition={{ duration: 0.14, ease: [0.22, 1, 0.36, 1] }}>
-              <motion.div ref={menuPanelRef} className="site-menu__panel" initial={reduceMotion ? false : { transform: 'translateX(100%)' }} animate={{ transform: 'translateX(0)' }} exit={reduceMotion ? undefined : { transform: 'translateX(100%)' }} transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}>
-                <div className="site-menu__glow" aria-hidden="true" />
-                <div className="site-menu__topline"><span>FIELD INDEX / 2026</span><span>JAKARTA + WORLDWIDE</span></div>
-                <nav className="site-menu__links" aria-label="Menu links">
-                  {navItems.map((item, index) => <a href={`#${item.toLowerCase()}`} key={item} onClick={() => { restoreMenuFocusRef.current = false; setMenuOpen(false) }}><span className="site-menu__number" aria-hidden="true">0{index + 1}</span>{item}</a>)}
-                </nav>
-                <div className="site-menu__footer"><a href="mailto:hello@cinder-atelier.studio">HELLO@CINDER-ATELIER.STUDIO <span aria-hidden="true">↗</span></a><p>BUILT FOR<br />THE UNSEEN.</p></div>
-              </motion.div>
-            </motion.aside>
-          )}
-        </AnimatePresence>
+        <aside id="site-menu" className={`site-menu ${menuOpen ? 'is-open' : ''}`} role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden={!menuOpen}>
+          <div ref={menuPanelRef} className="site-menu__panel">
+            <div className="site-menu__glow" aria-hidden="true" />
+            <div className="site-menu__topline"><span>FIELD INDEX / 2026</span><span>JAKARTA + WORLDWIDE</span></div>
+            <nav className="site-menu__links" aria-label="Menu links">
+              {navItems.map((item, index) => <a href={`#${item.toLowerCase()}`} key={item} onClick={() => { restoreMenuFocusRef.current = false; setMenuOpen(false) }}><span className="site-menu__number" aria-hidden="true">0{index + 1}</span>{item}</a>)}
+            </nav>
+            <div className="site-menu__footer"><a href="mailto:hello@cinder-atelier.studio">HELLO@CINDER-ATELIER.STUDIO <span aria-hidden="true">↗</span></a><p>BUILT FOR<br />THE UNSEEN.</p></div>
+          </div>
+        </aside>
 
         <div className="hero__utility">
           <motion.p {...heroReveal(3)}>ART DIRECTION<br />VISUAL IDENTITY<br />DIGITAL WORLDS</motion.p>
