@@ -8,9 +8,15 @@ AGENTS.md
 skills/
 personal-agent-skills/
 docs/
+**/BRANDING.md
+**/BRIEF*.md
+**/briefs/
 
 # Local editor and machine settings
 **/node_modules/
+**/dist/
+**/.vite/
+**/*.tsbuildinfo
 .vscode/
 .idea/
 *.code-workspace
@@ -20,3 +26,7 @@ docs/
 !.env.example
 Thumbs.db
 .DS_Store
+
+# Local Framer MCP exports and preview catalogs
+framer-export/
+framer-export-comp/
