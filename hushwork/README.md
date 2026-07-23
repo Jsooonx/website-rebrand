@@ -21,6 +21,9 @@ diagnostic, routing, review, chart, handover, sequential core-to-card, carousel,
 focal pricing, sequential comparison-scan, and staggered accordion motion sequences.
 The closing sequence adds a restrained light-line reveal, CTA stagger, notched
 brand lockup, and layered footer entrance.
+Primary CTA pills share one short hover contract: a one-pixel lift, restrained
+accent treatment, and a subtle arrow follow-through, with touch hover states
+disabled and a consistent press scale.
 The supplied references guide composition and visual density while all copy,
 data, icons, branding, and runtime code remain original to Hushwork.
 
