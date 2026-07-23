@@ -22,6 +22,25 @@ type EntranceVector = {
   blur?: number
 }
 
+function StackframePreview({ reduceMotion }: { reduceMotion: boolean | null }) {
+  return (
+    <motion.aside
+      className="stackframe-preview"
+      aria-label="Stackframe template preview"
+      initial={reduceMotion ? false : { opacity: 0, y: 12, filter: 'blur(5px)' }}
+      animate={reduceMotion ? undefined : { opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{ delay: 0.5, duration: 0.42, ease }}
+    >
+      <a className="stackframe-preview-back" href="https://stackframe.my.id/#library">
+        <span>Back to template</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a className="stackframe-preview-mark" href="https://stackframe.my.id" aria-label="Open Stackframe">
+        <img src="/stackframe-mark.svg" alt="" aria-hidden="true" />
+      </a>
+    </motion.aside>
+  )
+}
 
 function App() {
   const reduceMotion = useReducedMotion()
@@ -31,6 +50,7 @@ function App() {
   const [activeBenefits, setActiveBenefits] = useState<Record<string, boolean>>({})
   const [testimonialView, setTestimonialView] = useState({ start: 0, direction: 1 as -1 | 1 })
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [isStackframePreview, setIsStackframePreview] = useState(false)
 
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.09, smoothWheel: true })
@@ -39,6 +59,10 @@ function App() {
     frame = requestAnimationFrame(raf)
     setReady(true)
     return () => { cancelAnimationFrame(frame); lenis.destroy() }
+  }, [])
+
+  useEffect(() => {
+    setIsStackframePreview(new URLSearchParams(window.location.search).get('preview') === 'stackframe')
   }, [])
 
   const reveal = (delay: number, y = 18) => ({
@@ -76,6 +100,7 @@ function App() {
 
   return (
     <>
+    {isStackframePreview && <StackframePreview reduceMotion={reduceMotion} />}
     <main>
       {/* Hero: brand promise, primary navigation, and partner proof. */}
       <section className="hero" id="top" aria-labelledby="hero-title">
