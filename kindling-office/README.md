@@ -57,8 +57,10 @@ ventures.
   WebP files; original PNG sources are kept in `source-assets/original-png/`.
 - `npm run optimize:images` regenerates the served WebP assets from those PNG
   sources when the imagery changes.
-- `../framer-export/src/exports/das-studio/` remains generated and read-only
-  as a reference-only dependency.
+- `../framer-export/src/exports/das-studio/` is a generated, read-only vendor
+  dependency. It is versioned with the project so the Vite alias resolves in
+  local development and production deployments; adapters are the only place
+  where Kindling Office-specific composition and content are changed.
 
 ## Commands
 
