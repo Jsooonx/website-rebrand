@@ -21,6 +21,7 @@ docs/
 .idea/
 *.code-workspace
 *.local
+**/.codex-vite.log
 .env
 .env.*
 !.env.example
