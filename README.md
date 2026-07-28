@@ -12,6 +12,8 @@ fresh brand identities, visual directions, and responsive implementations.
 | 3 | Cinder Atelier | A fictional image-led creative practice for culture, fashion, and ambitious digital brands. | [Lurais / Framer](https://lurais.framer.website/) |
 | 4 | Hushwork | A fictional AI operations studio for service teams ready to remove recurring manual work without losing their human touch. | [Knotch / Framer](https://knotch.framer.ai/) |
 | 5 | Kindling Office | A fictional independent brand practice in Jakarta for food, hospitality, culture, and consumer ventures with something real to say. | [Das Studio / Framer](https://dasstudio.framer.website/) |
+| 6 | Vesper Studio | A fictional boutique dark-mode digital product studio & design-engineering practice for high-growth tech flagships. | [PortfolioJay / Framer](references/PortfolioJay) |
+| 7 | Forma Common | A fictional Jakarta brand identity practice presented through an image-led editorial portfolio with eight fictional projects. | [Mike Bennet / Framer](https://mikebennet.framer.website/) |
 
 This rebrand experiment was developed collaboratively with Codex AI in
 ChatGPT, using the GPT-5.6 Terra model.
