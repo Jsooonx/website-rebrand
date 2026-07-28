@@ -22,6 +22,7 @@ independent name, copy, visual system, layout details, and fictional imagery.
 ## Experience
 
 - Oversized responsive hero wordmark with an original modular Forma mark.
+- A matching custom SVG favicon for the browser tab.
 - Eight-project asymmetric editorial grid with two lead projects.
 - A concise About composition with studio signals and an original portrait.
 - A looping, reduced-motion-aware closing CTA using four project images.
