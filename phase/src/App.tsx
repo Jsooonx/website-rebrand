@@ -1006,9 +1006,42 @@ function Footer() {
   );
 }
 
+function StackframePreview({ reduceMotion }: { reduceMotion: boolean | null }) {
+  return (
+    <motion.aside
+      className="stackframe-preview"
+      aria-label="Stackframe preview controls"
+      initial={reduceMotion ? false : { opacity: 0, y: 12, filter: "blur(5px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.42, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <a
+        className="stackframe-preview-back"
+        href="https://stackframe.my.id/#library"
+      >
+        Back to template <span aria-hidden="true">↗</span>
+      </a>
+      <a
+        className="stackframe-preview-mark"
+        href="https://stackframe.my.id"
+        aria-label="Visit Stackframe"
+      >
+        <img src="/stackframe-mark.svg" alt="" />
+      </a>
+    </motion.aside>
+  );
+}
+
 export default function App() {
   const reducedMotion = useReducedMotion();
+  const [isStackframePreview, setIsStackframePreview] = useState(false);
   useSmoothScroll(reducedMotion);
+
+  useEffect(() => {
+    setIsStackframePreview(
+      new URLSearchParams(window.location.search).get("preview") === "stackframe",
+    );
+  }, []);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -1025,6 +1058,7 @@ export default function App() {
         <ClosingCta />
       </main>
       <Footer />
+      {isStackframePreview && <StackframePreview reduceMotion={reducedMotion} />}
     </MotionConfig>
   );
 }
