@@ -15,6 +15,7 @@ fresh brand identities, visual directions, and responsive implementations.
 | 6 | Vesper Studio | A fictional boutique dark-mode digital product studio & design-engineering practice for high-growth tech flagships. | [PortfolioJay / Framer](references/PortfolioJay) |
 | 7 | Forma Common | A fictional Jakarta brand identity practice presented through an image-led editorial portfolio with eight fictional projects. | [Mike Bennet / Framer](https://mikebennet.framer.website/) |
 | 8 | PHASE | A fictional Jakarta creative studio with an editorial portfolio, original campaign worlds, and expressive motion systems. | [Fuel / Framer](https://fuel.framer.website/) |
+| 9 | ROUGE | A fictional independent art-direction studio building visual worlds, campaigns, and digital presences for culture-led brands. | [Taylor Designer / Framer](https://taylordesigner.framer.website/) |
 
 This rebrand experiment was developed collaboratively with Codex AI in
 ChatGPT, using the GPT-5.6 Terra model.
