@@ -83,6 +83,75 @@ img {
   background-size: 100% 12rem;
 }
 
+.stackframe-preview {
+  position: fixed;
+  z-index: 30;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.55rem;
+  pointer-events: none;
+}
+
+.stackframe-preview-back,
+.stackframe-preview-mark {
+  pointer-events: auto;
+}
+
+.stackframe-preview-back {
+  min-height: 40px;
+  padding: 0 0.72rem 0 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  border-radius: 999px;
+  background: rgba(7, 11, 16, 0.9);
+  color: #f6f1e8;
+  outline: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), 0 2px 5px rgba(0, 0, 0, 0.18);
+  font: 500 0.5rem/1 "DM Mono", monospace;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  transition-property: background-color, color, transform, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stackframe-preview-back:hover {
+  background-color: #c8ff4a;
+  color: #11170a;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34), 0 0 0 4px rgba(200, 255, 74, 0.12);
+}
+
+.stackframe-preview-back:active { transform: scale(0.96); }
+.stackframe-preview-back:focus-visible,
+.stackframe-preview-mark:focus-visible { outline: 2px solid #c8ff4a; outline-offset: 3px; }
+
+.stackframe-preview-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(7, 11, 16, 0.9);
+  outline: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), 0 2px 5px rgba(0, 0, 0, 0.18);
+  transition-property: background-color, transform, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stackframe-preview-mark:hover {
+  background-color: #11170a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34), 0 0 0 4px rgba(200, 255, 74, 0.12);
+}
+
+.stackframe-preview-mark:active { transform: scale(0.96); }
+.stackframe-preview-mark img { width: 25px; height: 25px; display: block; }
+
 .site-header {
   position: fixed;
   z-index: 50;
