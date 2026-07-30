@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" fill="none">
-  <circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="7"/>
-  <circle cx="20" cy="20" r="5" fill="currentColor"/>
-  <text x="46" y="27" fill="currentColor" font-family="Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="-1.1">ORBIT</text>
-  <text x="122" y="27" fill="currentColor" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">COLLECTIVE</text>
-</svg>

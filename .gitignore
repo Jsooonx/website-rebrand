@@ -31,3 +31,6 @@ Thumbs.db
 # Local Framer MCP exports and preview catalogs
 framer-export/
 framer-export-comp/
+
+# Local archive for retired website explorations
+archive/
