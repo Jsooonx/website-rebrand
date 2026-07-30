@@ -471,3 +471,7 @@ owns the project-stack and footer-reveal effects.
 - 2026-07-29 — Original AI-generated ROUGE geometric mark added to the primary
   navigation, footer wordmark, and browser favicon. The mark appears lacquer
   red on light surfaces and switches to ivory over the dark hero.
+- 2026-07-30 - Footer hierarchy rebalanced: the ROUGE wordmark is scaled down
+  slightly, the link columns receive a dedicated wider lane, and the footer
+  frame uses a calmer vertical inset to prevent the brand and navigation text
+  from feeling compressed.
