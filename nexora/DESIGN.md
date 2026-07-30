@@ -39,6 +39,11 @@ The supplied value-card references are retained in
 `references/why-card-rail-reference-02.png`. They guide the density and
 craft of an animated horizontal card rail only; all NEXORA illustrations,
 copy, colours, and interaction decisions remain original.
+The supplied integration references are retained in
+`references/integrations-fan-reference-01.png` and
+`references/integrations-fan-reference-02.png`. They inform the idea of a
+layered fan of connected systems and counter-moving tracks only; NEXORA uses
+an original ecosystem, integration marks, motion, and explanatory content.
 
 NEXORA will not reproduce its chat-agent framing, copy, landscape artwork,
 colour treatment, symmetrical product mockup, or decorative secondary CTA.
@@ -285,6 +290,72 @@ only a short opacity entrance for the card surface.
 - On mobile, cards take most of the viewport width; users can swipe through
   them without needing precision pointer control. Focused controls retain
   strong visible focus states.
+
+## Section 4: Integrations
+
+### Purpose and content
+
+The integration section gives NEXORA a credible operational context after the
+product and value sections. Its visual system shows that useful decisions do
+not begin in a single dashboard: they emerge from the systems where stock,
+routes, orders, and service impact already live.
+
+- Eyebrow: `CONNECTED SYSTEMS / 04`
+- Heading: `Everything that moves a decision.`
+- Supporting copy: `NEXORA connects the systems where operational context
+  lives, then turns their signals into one accountable response.`
+
+### Fan ecosystem
+
+The focal visual is an original semi-circular ecosystem fan. A fixed NEXORA
+core mark sits at the lower centre; two nested arcs of integration marks fan
+out above it. Fine low-contrast connection lines establish their relationship
+without turning the composition into a literal network diagram.
+
+- The outer arc carries 8–10 fictional integration marks and travels slowly
+  from right to left.
+- The inner arc carries 5–6 fictional integration marks and travels slowly
+  from left to right at a slightly slower pace.
+- Each track is duplicated and edge-masked so its loop is continuous with no
+  visible reset. The central NEXORA mark never moves.
+- At most two connections are active at once: a fine signal-lime line briefly
+  resolves from a passing mark toward the NEXORA core, then fades. The motion
+  should feel like live context arriving, not a busy decorative marquee.
+- For `prefers-reduced-motion`, all marks stop in a balanced static fan and
+  the active connection is rendered as a subtle stationary state.
+
+### Fictional integration-mark system
+
+All marks are original and fictional. Do not use external-company logos or
+imply official integrations. Each mark is a compact monochrome vector with a
+distinct silhouette—such as a split ring, folded bar, rounded grid, stepped
+square, or divided capsule—inside a small translucent node. The ecosystem may
+use invented product names in implementation only where a label is needed;
+the visual should read as a believable category ecosystem rather than a claim
+about real vendor relationships.
+
+### Source groups
+
+Four concise columns below the fan explain the type of operational context
+NEXORA connects. Each gets a category icon from one coherent UI icon family;
+they are not the fan's integration marks.
+
+| Source group | Signals NEXORA reads |
+| --- | --- |
+| **Warehouse systems** | Stock, scan events, fulfilment, and exceptions. |
+| **Transport networks** | ETA, route changes, and carrier handoffs. |
+| **Orders and ERP** | Demand, purchase orders, and exposure. |
+| **Customer operations** | SLA risk, escalations, and service impact. |
+
+### Responsiveness and accessibility
+
+- The fan remains a decorative visual. The section's meaning is fully present
+  in its heading, supporting copy, and source-group columns.
+- On tablet and mobile, show a smaller static fan or one restrained arc above
+  a two-by-two source-group grid. Do not force a wide clipped animation into
+  a narrow viewport.
+- Motion has no interaction requirement and must not obscure focus, text, or
+  the section's reading order.
 
 ## Next decisions
 
