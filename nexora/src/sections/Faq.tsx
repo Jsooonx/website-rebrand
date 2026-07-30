@@ -21,6 +21,7 @@ export function Faq() {
         <SectionHeader
           eyebrow="FAQ"
           index="06"
+          titleId="faq-title"
           title="Answers for the operating room."
           description="A practical view of what NEXORA connects to, how it decides, and where your team stays in control."
         />

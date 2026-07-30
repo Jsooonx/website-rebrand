@@ -14,6 +14,7 @@ export function Pricing() {
         <SectionHeader
           eyebrow="Pricing"
           index="05"
+          titleId="pricing-title"
           title="Start with one signal. Scale to the network."
           description="Plans follow the operating footprint, refresh cadence, and control your team actually needs."
         />

@@ -44,6 +44,7 @@ export function Integrations() {
         <SectionHeader
           eyebrow="Integrations"
           index="04"
+          titleId="integrations-title"
           title="Connect the systems behind every decision."
           description="NEXORA listens across your operating stack, without asking teams to abandon the tools where work already happens."
         />

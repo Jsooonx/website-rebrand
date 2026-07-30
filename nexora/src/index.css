@@ -821,6 +821,14 @@ main {
   background: rgb(216 221 218 / 0.025);
 }
 
+.capability-tabs {
+  scrollbar-width: none;
+}
+
+.capability-tabs::-webkit-scrollbar {
+  display: none;
+}
+
 .capability-tabs button {
   position: relative;
   min-height: 3.2rem;

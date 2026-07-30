@@ -27,6 +27,7 @@ export function Capabilities() {
         <SectionHeader
           eyebrow="Operations intelligence"
           index="02"
+          titleId="capabilities-title"
           title="From signal to decision."
           description="One operational picture, four ways to stay ahead of the disruption."
         />

@@ -15,6 +15,7 @@ export function WhyNexora() {
         <SectionHeader
           eyebrow="Why NEXORA"
           index="03"
+          titleId="why-title"
           title="Clarity that holds under pressure."
           description="Built for the moments when an operational signal needs a real decision."
         />

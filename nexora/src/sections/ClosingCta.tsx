@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Icon } from "../components/ui/Icon";
 import { Reveal } from "../components/ui/Reveal";
@@ -12,6 +12,7 @@ const trustSignals = [
 
 export function ClosingCta() {
   const sectionRef = useRef<HTMLElement>(null);
+  const reducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end end"],
@@ -63,13 +64,20 @@ export function ClosingCta() {
 
         <motion.div
           className="closing-brief"
-          style={{ y: briefY, opacity: briefOpacity }}
+          style={{
+            y: reducedMotion ? 0 : briefY,
+            opacity: reducedMotion ? 1 : briefOpacity,
+          }}
         >
           <OperatorBrief />
         </motion.div>
       </div>
 
-      <motion.div className="closing-terrain" style={{ y: terrainY }} aria-hidden="true">
+      <motion.div
+        className="closing-terrain"
+        style={{ y: reducedMotion ? 0 : terrainY }}
+        aria-hidden="true"
+      >
         <img src="/images/terrain-closing.webp" alt="" />
         <div className="closing-terrain__signal"><i /><span>Signal resolved</span></div>
       </motion.div>

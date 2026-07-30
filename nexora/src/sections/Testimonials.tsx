@@ -21,6 +21,7 @@ export function Testimonials() {
         <SectionHeader
           eyebrow="Customer stories"
           index="07"
+          titleId="testimonials-title"
           title="Trusted when the network gets difficult."
           description="Operations teams use NEXORA to see risk earlier, align the response, and recover with less disruption."
         />

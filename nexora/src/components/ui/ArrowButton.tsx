@@ -37,7 +37,7 @@ export function ArrowButton({
   }
 
   return (
-    <button className={classes} {...(props as NativeButtonProps)}>
+    <button type="button" className={classes} {...(props as NativeButtonProps)}>
       {content}
     </button>
   );

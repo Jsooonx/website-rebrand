@@ -6,6 +6,14 @@ describe("NEXORA application shell", () => {
     render(<App />);
 
     expect(screen.getByRole("main")).toBeInTheDocument();
-    expect(screen.getByText("NEXORA")).toBeInTheDocument();
+    expect(screen.getAllByText("NEXORA").length).toBeGreaterThan(0);
+    expect(
+      screen.getByRole("region", { name: "From signal to decision." }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("region", {
+        name: "Trusted when the network gets difficult.",
+      }),
+    ).toBeInTheDocument();
   });
 });
