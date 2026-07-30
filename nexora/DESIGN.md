@@ -611,6 +611,81 @@ the wordmark/positioning leads; footer groups stack in normal flow with clear
 tap targets. All internal links point to valid sections or destinations before
 release.
 
+## Motion and micro-interaction system
+
+### Motion character
+
+NEXORA uses an `operational rhythm`: precise, calm, and ordered. Motion should
+clarify the sequence of a decision rather than advertise animation for its own
+sake. Do not apply one generic reveal or parallax treatment to every section.
+
+### Section entrances
+
+Each section's first viewport entrance follows a clear reading order:
+
+1. Eyebrow or section marker.
+2. Headline, revealed by line or phrase; word-level reveal is reserved for the
+   hero and only when it supports the editorial pacing.
+3. Supporting copy.
+4. Controls such as tabs, toggles, or chevrons.
+5. The primary product visual after its explanatory text has settled.
+
+Use around 70–100ms between semantic groups. Repeated card groups use a
+45–65ms stagger in visual reading order. Default entrance movement combines
+opacity, a 14–18px upward settle, and at most 4px of text blur; do not shrink
+elements from a dramatic scale. Entrance sequences run once on first viewport
+entry and never replay merely because the reader scrolls back.
+
+### Deliberate parallax scenes
+
+Parallax is a signature NEXORA device, used only where layered operational
+depth gives meaning:
+
+- **Hero:** Signal Terrain moves more slowly than the copy and Signal Map,
+  suggesting the interface is emerging from the deeper operating system.
+- **Integrations:** The outer integration arc travels right-to-left while the
+  inner arc travels left-to-right at a different, slower pace. The fixed
+  NEXORA core anchors this horizontal layered depth.
+- **Closing CTA:** The Operator Brief rises by roughly 8–12% as the closing
+  Signal Terrain advances upward from the foreground and resolves into the
+  footer's black surface.
+
+Pricing, FAQ, testimonial, tabs, and most card content remain spatially
+stable. This gives the reader reliable surfaces for comparison and interaction
+and keeps parallax special when it does appear.
+
+### Micro-interaction contracts
+
+- **Primary CTA:** lift 1px, slightly strengthen its surface/shadow, and move
+  its arrow 2px in the action direction. Pressing uses `scale(.96)`.
+- **Secondary buttons and chevrons:** increase surface contrast and translate
+  the directional icon 2px. Provide at least a 44px touch hit area.
+- **Tabs and annual billing control:** move the active pill/surface as one
+  continuous state change; do not flash the active colour on and off.
+- **Pricing values:** use `tabular-nums`; outgoing values rise and fade,
+  incoming values settle upward from below.
+- **Interactive cards:** only clickable cards may lift by up to 2px. Static
+  information cards receive no ornamental hover lift.
+- **FAQ:** the chevron rotates 180 degrees as its answer opens. The answer
+  uses an interruptible height/opacity transition, so a rapid second click
+  reverses cleanly.
+- **Testimonials:** user-controlled chevrons change quote, attribution, and
+  portrait together; no auto-play.
+
+### Accessibility and performance
+
+- Every hover state has a keyboard-focus equivalent. Focus rings use the
+  signal-lime accent with sufficient contrast.
+- Use CSS transitions for interactive changes so they can reverse mid-action;
+  reserve Framer Motion timelines for one-shot staged sequences such as the
+  hero, SVG card build, and section entrance.
+- Animate only compositor-friendly `transform`, `opacity`, and limited
+  `filter` properties. Never use `transition: all`; use `will-change` only if
+  a specific animated layer shows first-frame stutter.
+- With `prefers-reduced-motion`, remove parallax, travelling signals, and
+  continuous integration loops. Preserve only short opacity transitions where
+  they help establish changed content.
+
 ## Next decisions
 
 We will design the remaining page sections one at a time after the hero is
