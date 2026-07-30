@@ -27,6 +27,8 @@ The supplied hero reference is retained in `references/reference-hero.png`.
 It is useful for its focused reading order: restrained navigation, a small
 release signal, one large outcome-led statement, a short support line, a
 primary action, and a product surface grounded in an atmospheric landscape.
+The generated `references/signal-terrain-exploration.png` is a direction
+study for NEXORA's original hero-to-page transition, not a final runtime asset.
 
 NEXORA will not reproduce its chat-agent framing, copy, landscape artwork,
 colour treatment, symmetrical product mockup, or decorative secondary CTA.
@@ -56,6 +58,26 @@ canvas that intentionally breaks the central alignment of the reference.
 - Panels are translucent graphite with fine low-contrast borders; radii are
   modest (16–24px), so the system feels engineered rather than playful.
 
+### Signal Terrain transition
+
+The bottom of the hero is an original abstract `Signal Terrain`: a dark,
+three-dimensional field of layered operational routes, contour-like network
+lines, sparse nodes, and atmospheric graphite haze. It provides the sense of
+depth and seamless black exit found in the reference without using literal
+hills, vegetation, or a natural landscape.
+
+- The product canvas sits in front of the terrain; the terrain begins around
+  55–60% down the hero and is visible mainly beneath and around the canvas.
+- As the reader scrolls, the canvas subtly settles into and fades through the
+  terrain. The terrain grows darker toward its foreground and lower edge.
+- A strong black gradient mask covers the final 30–40% of the terrain. It
+  merges cleanly into the `#11171B` page background for the next section.
+- One signal-lime route shows a healthy operational flow; one ember route
+  marks a delayed handoff. All remaining nodes stay low contrast, so the
+  transition supports rather than competes with the product interface.
+- The effect should feel like descending beneath the visible interface into
+  the operational system that powers it, not travelling into a scenic world.
+
 ## Hero: first implementation scope
 
 ### Content
@@ -84,6 +106,16 @@ canvas that intentionally breaks the central alignment of the reference.
 5. Fine route lines and restrained luminous haze connect the textual and
    product halves without making the hero busy.
 
+### Hero exit and first scroll transition
+
+The hero should be tall enough for the product canvas and Signal Terrain to
+share the frame before the next section begins. At the lower scroll range, the
+canvas loses contrast and recedes behind the terrain while the single lime
+route completes its short journey toward an active node. The dense foreground
+then fades fully to the black page surface. The next section must begin on
+that same black surface with no visible seam, giving the reader the impression
+that they have entered NEXORA's operational control layer.
+
 ### Responsive behaviour
 
 - At tablet widths, the content remains left-aligned; the product canvas moves
@@ -99,7 +131,11 @@ canvas that intentionally breaks the central alignment of the reference.
 - On entry: eyebrow, headline, supporting copy, and actions reveal in a short
   editorial sequence; the canvas settles immediately after the copy.
 - Once settled, route lines may softly pulse and a single active signal can
-  travel along a line. Motion is low-amplitude and never loops distractingly.
+  travel along a line. It completes before the hero exits; it must not become
+  a distracting loop.
+- The terrain uses a small scroll-linked vertical drift and fade only. It is a
+  static raster-based visual with lightweight CSS masking, rather than a
+  continuously animated 3D scene.
 - CTA hover: one-pixel lift, border/value shift, and a small arrow movement.
 - `prefers-reduced-motion` removes path travel and spatial reveals while
   retaining a brief opacity transition.
