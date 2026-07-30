@@ -686,10 +686,22 @@ and keeps parallax special when it does appear.
   continuous integration loops. Preserve only short opacity transitions where
   they help establish changed content.
 
-## Next decisions
+## Approved page scope and pre-implementation assets
 
-We will design the remaining page sections one at a time after the hero is
-approved. Likely future sections are: operational proof, the signal workflow,
-product capabilities, customer outcomes, implementation process, FAQ, and a
-closing briefing CTA. These are placeholders for discussion, not approved
-page requirements.
+The approved page sequence is: Hero and Signal Terrain; From signal to
+decision; Why NEXORA; Integrations; Pricing; FAQ; Testimonials; Closing CTA and
+footer. The proposed sticky `What you get` section is deliberately excluded:
+its product outcomes would repeat the capabilities and value sections without
+adding a distinct decision point.
+
+Before implementation, create the following original production assets:
+
+- A refined hero Signal Terrain and a distinct darker closing Signal Terrain.
+- Three fictional testimonial portraits: Asha Raman, Tomas Wren, and Leila
+  Sato.
+- Three compact fictional testimonial company marks and the NEXORA core mark.
+- The fictional integration-mark set for the two fan tracks.
+- Bespoke inline SVG diagrams for the five Why NEXORA cards.
+
+The reference screenshots remain design-direction documentation only and must
+not be served as runtime website assets.
