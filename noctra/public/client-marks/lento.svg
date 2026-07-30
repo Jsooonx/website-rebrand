@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" fill="none">
+  <path d="M5 12v40M5 52h39" stroke="#08090B" stroke-width="4"/>
+  <path d="M18 12v27c0 9 5 13 13 13" stroke="#08090B" stroke-width="2"/>
+  <text x="59" y="41" fill="#08090B" font-family="Palatino, 'Times New Roman', serif" font-size="32" font-style="italic" letter-spacing="-1">Lento</text>
+</svg>
