@@ -34,6 +34,11 @@ The supplied feature references are retained in
 `references/features-coordinate-reference.png`. They establish the useful
 pattern of a tabbed product canvas and alternate previous/next controls, but
 do not supply NEXORA's copy, product data, UI, imagery, or visual identity.
+The supplied value-card references are retained in
+`references/why-card-rail-reference-01.png` and
+`references/why-card-rail-reference-02.png`. They guide the density and
+craft of an animated horizontal card rail only; all NEXORA illustrations,
+copy, colours, and interaction decisions remain original.
 
 NEXORA will not reproduce its chat-agent framing, copy, landscape artwork,
 colour treatment, symmetrical product mockup, or decorative secondary CTA.
@@ -217,6 +222,69 @@ than reproducing a chat interface, email workflow, or generic task manager.
 - Chevron controls have explicit accessible labels, remain keyboard reachable,
   and provide the same results as the tabs. Reduced-motion users receive an
   immediate content swap with a brief opacity transition only.
+
+## Section 3: Why NEXORA
+
+### Purpose
+
+This section answers why an operations team should trust NEXORA once they have
+seen its workflow. It must not repeat the dashboard features from Section 2.
+Instead, it articulates the operating principles that make the system useful
+when conditions are changing and decisions carry consequences.
+
+- Eyebrow: `WHY NEXORA / 03`
+- Heading: `Clarity that holds under pressure.`
+- Supporting copy: `Built for the moments when an operational signal needs a
+  real decision.`
+
+### Horizontal value-card rail
+
+Five horizontal cards sit on an intentionally clipped rail. At desktop, show
+roughly three full cards plus the edge of the next or previous card; this makes
+the rail's continuation obvious. Cards use a dark double-surface treatment: a
+subtly bordered illustration field above and a concise title/body field below.
+Each illustration is a bespoke inline SVG, not an icon-library substitute.
+
+| Card | Value | Original SVG subject |
+| --- | --- | --- |
+| **See it early** | Risks surface before they become broad disruption. | One node grows into a radius signal and a layered alert contour. |
+| **Trace the cause** | Teams understand the source, not only the symptom. | A single point becomes a line, then divides into a concise causal trace. |
+| **Align the response** | Every owner acts from the same shared response. | A node becomes a path connecting three accountable handoff points. |
+| **Keep humans in control** | Recommendations remain inside team guardrails and approvals. | A point becomes a route that resolves through an approval gate. |
+| **Learn from every move** | Outcomes feed better decisions at the next disruption. | A point becomes an upward curve and a closed feedback loop. |
+
+### SVG build choreography
+
+The card illustrations must feel constructed, not simply revealed. Their
+motion follows a shared three-phase grammar while each card retains a distinct
+final object:
+
+1. A small fog-grey origin point appears at the diagram's meaningful start.
+2. The main route is drawn outward with SVG path `stroke-dashoffset`; branching
+   or structural lines follow after a short delay.
+3. The final contour, nodes, gate, or loop settles with a faint lime accent at
+   the relevant decision point.
+
+Run this sequence once—around 700–900ms—when a card first becomes the rail's
+dominant visible item. Do not replay it every time the card is revisited and
+do not treat it as a loading indicator. The illustrations use thin fog-grey
+linework on black, with signal-lime reserved for a single meaningful endpoint.
+With `prefers-reduced-motion`, show the final SVG state immediately and retain
+only a short opacity entrance for the card surface.
+
+### Rail controls and accessibility
+
+- Circular left and right chevrons move the rail by one card on desktop and
+  mobile; the rail also supports direct drag and touch swipe.
+- A horizontal progress track sits between the chevrons. Its thumb reflects
+  the actual visible rail position and is not decorative.
+- The rail does not wrap from the final card back to the first. At either end,
+  the unavailable chevron is visibly and semantically disabled.
+- Cards remain readable in normal document order. Arrow control buttons have
+  explicit labels such as `Show next reason to choose NEXORA`.
+- On mobile, cards take most of the viewport width; users can swipe through
+  them without needing precision pointer control. Focused controls retain
+  strong visible focus states.
 
 ## Next decisions
 
