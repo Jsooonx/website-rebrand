@@ -44,6 +44,10 @@ The supplied integration references are retained in
 `references/integrations-fan-reference-02.png`. They inform the idea of a
 layered fan of connected systems and counter-moving tracks only; NEXORA uses
 an original ecosystem, integration marks, motion, and explanatory content.
+The supplied pricing reference is retained in `references/pricing-reference.png`.
+It informs the editorial three-tier comparison and annual-billing interaction
+only; NEXORA's plans, pricing, plan criteria, and global billing control are
+original.
 
 NEXORA will not reproduce its chat-agent framing, copy, landscape artwork,
 colour treatment, symmetrical product mockup, or decorative secondary CTA.
@@ -356,6 +360,65 @@ they are not the fan's integration marks.
   a narrow viewport.
 - Motion has no interaction requirement and must not obscure focus, text, or
   the section's reading order.
+
+## Section 5: Pricing
+
+### Purpose and content
+
+The pricing section is deliberately clear and calm after the more expressive
+ecosystem visual. NEXORA is an operations platform that normally requires
+implementation and connected data, so its tiers scale with operational
+footprint rather than generic AI-query quotas.
+
+- Eyebrow: `PRICING / 05`
+- Heading: `Pricing that matches your operating footprint.`
+- Supporting copy: `Start with the signals you need. Expand when more of the
+  network depends on them.`
+- Comparison action: `Compare plans` (anchors to a detailed comparison when
+  that content is added later).
+
+### Plan tiers
+
+| Plan | Monthly billing | Annual billing | For | Primary CTA |
+| --- | --- | --- | --- | --- |
+| **Signal** | `$1,200 / mo` | `$1,000 / mo` | Teams operating up to three locations with core data sources. | `Request briefing` |
+| **Control** | `$2,800 / mo` | `$2,350 / mo` | Multi-location networks that need response plans and approval flows. | `Request briefing` |
+| **Network** | `Custom` | `Custom` | Complex operations, regional rollout, or custom integrations. | `Talk to NEXORA` |
+
+`Control` is the recommended tier. It is slightly elevated with a subtly
+brighter graphite surface, a fine signal-lime rule, and a concise
+`Recommended for multi-site teams` label. The other cards remain equally
+legible; the recommended treatment must not look like a promotional banner.
+
+Feature rows prioritise: monitored locations/facilities, connected data
+sources and refresh cadence, alert and response workflows, approval/audit
+trail, and implementation/support level. Do not use unrelated measures such
+as AI-query caps.
+
+### Global billing control
+
+One annual/monthly switch sits above the entire pricing grid, accompanied by a
+small `Save 17% annually` label. It changes both priced plans together so all
+cards remain comparable in the same billing period. Do not provide a separate
+switch inside every pricing card. The custom Network tier remains `Custom` in
+both states.
+
+### Price transition and accessibility
+
+- The switch thumb moves in 180–220ms. Its checked label and the annual saving
+  remain visible in text, not colour alone.
+- On change, the outgoing price rises roughly 6px and fades; the incoming price
+  enters from below. Price numerals use `tabular-nums` to prevent width jitter.
+- The period label changes to `billed annually` in the annual state. The
+  amount still communicates its monthly equivalent, so the comparison stays
+  immediately understandable.
+- With `prefers-reduced-motion`, values update directly with no spatial price
+  animation.
+- Implement the control as a single labelled checkbox/switch with an explicit
+  accessible state, for example `Bill annually — save 17 percent`. Price
+  updates must be announced without disrupting reading order.
+- On mobile, cards stack Signal → Control → Network and the global billing
+  control remains above all three tiers.
 
 ## Next decisions
 
