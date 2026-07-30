@@ -29,6 +29,13 @@ pnpm dev
 pnpm build
 ```
 
+Or with npm:
+
+```bash
+npm install
+npm run build
+```
+
 Generated source images live in `assets/source/`; optimized runtime assets live
 in `public/images/`. The exact prompts are documented in
 `assets/PROMPTS.md`. Reference screenshots are retained only in `references/`

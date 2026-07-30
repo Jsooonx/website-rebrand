@@ -742,6 +742,9 @@ Optimized WebP crops used by the site live in `public/images/`.
   preserving the intended two-line editorial lockup.
 - 2026-07-30 - Journal was removed from the page, Index, and footer sitemap.
   The contact chapter now carries sequence number `06` after the FAQ.
+- 2026-07-30 - Removed an unused `pnpm-workspace.yaml` that lacked a
+  `packages` field and prevented Cloudflare's pnpm install step from running.
+  NOCTRA remains a standalone Vite application and supports npm commands.
 - 2026-07-29 - Motion system expanded: shared micro-elements, sectional
   stagger/reveal choreography, hover/focus feedback, and reduced-motion
   behaviour are defined without adding competing animation ideas.
