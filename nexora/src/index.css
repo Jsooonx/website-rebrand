@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter, "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system,
+    sans-serif;
+  color: #d8ddda;
+  background: #11171b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --night: #11171b;
+  --charcoal: #1b2a31;
+  --fog: #d8ddda;
+  --slate: #94a09d;
+  --lime: #c8f05b;
+  --ember: #e8865b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: auto;
+  background: var(--night);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--night);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.wordmark {
+  color: var(--fog);
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+}
+
+main {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 2rem;
+}
+
+main h1 {
+  max-width: 20ch;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 450;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
