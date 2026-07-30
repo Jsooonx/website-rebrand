@@ -48,6 +48,10 @@ The supplied pricing reference is retained in `references/pricing-reference.png`
 It informs the editorial three-tier comparison and annual-billing interaction
 only; NEXORA's plans, pricing, plan criteria, and global billing control are
 original.
+The supplied FAQ reference is retained in `references/faq-reference.png`. It
+informs the useful relationship between category navigation and grouped
+accordion answers only; NEXORA uses original categories, question content,
+sticky behaviour, and accessible controls.
 
 NEXORA will not reproduce its chat-agent framing, copy, landscape artwork,
 colour treatment, symmetrical product mockup, or decorative secondary CTA.
@@ -419,6 +423,63 @@ both states.
   updates must be announced without disrupting reading order.
 - On mobile, cards stack Signal → Control → Network and the global billing
   control remains above all three tiers.
+
+## Section 6: FAQ
+
+### Purpose and content
+
+The FAQ is the final practical-information section before the closing
+conversion moment. It supports three audiences—operators, implementation
+owners, and governance/commercial stakeholders—without presenting one long,
+undifferentiated list.
+
+- Eyebrow: `FAQ / 06`
+- Heading: `Questions before the next move?`
+- Supporting copy: `Practical answers for the people who run, connect, and
+  govern the network.`
+
+### Categories
+
+| Category | Focus | Example questions |
+| --- | --- | --- |
+| **Product & operations** | What NEXORA reads, prioritises, and presents to teams each day. | `What does NEXORA monitor?`; `How are signals prioritised?`; `Who uses the daily brief?` |
+| **Implementation & integrations** | Onboarding, connected systems, and data readiness. | `How long does onboarding take?`; `Which systems can NEXORA connect to?`; `What data needs to be prepared?` |
+| **Governance & commercial** | Approvals, auditability, security, pricing, and ongoing support. | `Can we require approval before action?`; `What is captured in the audit trail?`; `How does pricing scale?` |
+
+Each category contains five to six concise answers. The first answer is open
+when that category becomes active; within a category, only one answer remains
+open at a time.
+
+### Layout and scroll behaviour
+
+The desktop layout pairs a narrow category column at left with the accordion
+list at right. The category module begins aligned to the first accordion item
+and uses `position: sticky` with a measured top offset. It remains stable while
+the answer list scrolls, then releases before overlapping the contact card that
+follows it. Do not continuously translate the category menu down the page: its
+job is orientation, not decorative scroll choreography.
+
+Below the category module sits a compact contact card:
+
+- Title: `Need a rollout plan?`
+- Copy: `Talk through your operating footprint, systems, and first signal set.`
+- CTA: `Talk to NEXORA`
+
+### Interaction and accessibility
+
+- Category controls are labelled buttons with an explicit selected state. A
+  category switch replaces the right-side accordion group with a short opacity
+  transition and no sidebar movement.
+- Accordion questions are native buttons with `aria-expanded` and a correctly
+  associated answer region. Their height/opacity transition stays brief and
+  never prevents keyboard use.
+- Category selection and accordion state are independent of scroll position;
+  the reader is never switched to a different category automatically.
+- On mobile, category controls become a horizontally scrollable pill row above
+  the accordion. The sidebar and its contact card return to normal flow; no
+  sticky positioning is used.
+- Reduced-motion users receive immediate category/accordion updates with only
+  a minimal opacity change where helpful.
 
 ## Next decisions
 
