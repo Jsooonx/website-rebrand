@@ -29,6 +29,11 @@ release signal, one large outcome-led statement, a short support line, a
 primary action, and a product surface grounded in an atmospheric landscape.
 The generated `references/signal-terrain-exploration.png` is a direction
 study for NEXORA's original hero-to-page transition, not a final runtime asset.
+The supplied feature references are retained in
+`references/features-tabs-reference.png` and
+`references/features-coordinate-reference.png`. They establish the useful
+pattern of a tabbed product canvas and alternate previous/next controls, but
+do not supply NEXORA's copy, product data, UI, imagery, or visual identity.
 
 NEXORA will not reproduce its chat-agent framing, copy, landscape artwork,
 colour treatment, symmetrical product mockup, or decorative secondary CTA.
@@ -148,6 +153,70 @@ that they have entered NEXORA's operational control layer.
   menu.
 - Treat the signal map as decorative unless it exposes equivalent structured
   text; do not make status colour the only warning indicator.
+
+## Section 2: From signal to decision
+
+### Purpose and transition
+
+This is NEXORA's primary capability section. It begins immediately after the
+Signal Terrain has faded into the same `#11171B` page surface, making the page
+feel as though the reader has moved beneath the visible interface and into the
+operational system itself. A large editorial heading and its supporting line
+appear first, followed by the tab strip and a single product canvas.
+
+- Eyebrow: `OPERATIONS INTELLIGENCE / 02`
+- Heading: `From signal to decision.`
+- Supporting copy: `One operational picture, four ways to stay ahead of the
+  disruption.`
+
+The section must not use a generic `Features` heading. Its role is to make the
+NEXORA workflow tangible through four connected operational views.
+
+### Capability tabs and product views
+
+| Tab | Purpose | Dashboard canvas |
+| --- | --- | --- |
+| **Detect** | Surface the disruption before it spreads. | `Signal Map` with location nodes, a delayed transfer route, inventory risk, and an attention queue. |
+| **Explain** | Make cause and impact understandable. | `Cause Trace` linking a late handoff to affected stock, downstream orders, and the projected exposure. |
+| **Coordinate** | Turn the finding into an accountable response. | `Response Plan` with reroute recommendations, owners, time windows, and approval-aware next actions. |
+| **Learn** | Show what changed after action was taken. | `Impact Review` with recovery time, prevented disruption, and location-level trend comparison. |
+
+The four views use one coherent shell: a compact NEXORA rail, a canvas title,
+and a focused work area. Each view changes its own operational content rather
+than reproducing a chat interface, email workflow, or generic task manager.
+
+### Layout and interaction
+
+1. A wide two-column introduction pairs the heading at left with the
+   supporting copy at right, retaining the reference's editorial density while
+   using original content and proportions.
+2. Below it, four equal tab buttons sit in a single restrained segmented strip:
+   `Detect`, `Explain`, `Coordinate`, and `Learn`.
+3. The selected tab uses a slightly elevated graphite pill with a fine
+   signal-lime active line. Inactive tabs remain clear and readable rather
+   than fading into decoration.
+4. The dashboard canvas has a dark translucent surface with low-contrast
+   borders. A muted atmosphere or route-texture behind it may reference the
+   Signal Terrain, but no literal landscape image is used.
+5. Under the canvas, circular chevrons provide a complete alternate path:
+   `Previous capability` and `Next capability`. The central label explains the
+   active capability's operational outcome. The controls cycle through the
+   same four views in order and wrap at the ends.
+
+### Motion and accessibility
+
+- The introduction reveals first, followed by the tab strip and then the
+  canvas. This makes the workflow legible before the product detail appears.
+- Selecting a tab fades the departing view slightly and shifts it by a small
+  amount before the incoming content resolves from the relevant signal point.
+  Avoid a hard cut, full-page slide, or flashy crossfade.
+- The dashboard canvas must not auto-rotate. The reader controls every change.
+- Tabs follow the WAI-ARIA tab pattern: each is a labelled button with
+  `role="tab"`, `aria-selected`, and an associated `role="tabpanel"`.
+  Arrow keys move between tabs; Enter and Space activate the focused tab.
+- Chevron controls have explicit accessible labels, remain keyboard reachable,
+  and provide the same results as the tabs. Reduced-motion users receive an
+  immediate content swap with a brief opacity transition only.
 
 ## Next decisions
 
