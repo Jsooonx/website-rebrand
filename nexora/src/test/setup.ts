@@ -6,8 +6,25 @@ class ResizeObserverStub {
   disconnect() {}
 }
 
+class IntersectionObserverStub {
+  readonly root = null;
+  readonly rootMargin = "";
+  readonly thresholds = [0];
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords() {
+    return [];
+  }
+}
+
 Object.defineProperty(globalThis, "ResizeObserver", {
   value: ResizeObserverStub,
+  configurable: true,
+});
+
+Object.defineProperty(globalThis, "IntersectionObserver", {
+  value: IntersectionObserverStub,
   configurable: true,
 });
 
