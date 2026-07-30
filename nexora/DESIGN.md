@@ -56,6 +56,12 @@ The supplied testimonial reference is retained in
 `references/testimonials-reference.png`. It informs the focused quote/portrait
 composition and manual testimonial navigation only; NEXORA uses original
 people, company marks, outcomes, photography, and interaction detail.
+The supplied closing references are retained in
+`references/closing-cta-reference-01.png` and
+`references/closing-cta-reference-02.png`. They inform the relationship
+between a final CTA, product panel, foreground visual, and footer only;
+NEXORA uses an original operator brief, Signal Terrain artwork, copy, trust
+language, and footer composition.
 
 NEXORA will not reproduce its chat-agent framing, copy, landscape artwork,
 colour treatment, symmetrical product mockup, or decorative secondary CTA.
@@ -537,6 +543,73 @@ stock-person identities.
 - On mobile, the quote, attribution, controls, and outcome precede the
   portrait in normal document order. The image is a shorter wide crop below
   the text.
+
+## Section 8: Closing CTA and footer
+
+### Purpose and content
+
+The final CTA is the page's closing scene, not a standalone banner. It returns
+to the Signal Terrain language introduced in the hero, so the site opens and
+closes as one coherent operational world.
+
+- Eyebrow: `START WITH THE SIGNAL / 08`
+- Heading: `See the next move before it becomes urgent.`
+- Supporting copy: `Bring your operating footprint, priority systems, and
+  first signal set. We’ll show you where NEXORA can create clarity first.`
+- Primary CTA: `Request an operational briefing`
+- Trust signals: `Approval-aware workflows`; `Traceable operational decisions`;
+  `Built for distributed teams`.
+
+Do not use external compliance badges such as GDPR or SOC 2 without a real,
+verified claim. The three trust signals above describe product posture rather
+than making certification claims.
+
+### Operator Brief and closing parallax
+
+The CTA uses a wide split layout: copy, primary action, and trust signals at
+left; an original `NEXORA Operator Brief` product surface at right. The brief
+summarises one clear operating picture: a location needing attention, a delayed
+handoff, its accountable owner, and a recommended next action. It must not
+recreate a chat UI.
+
+As the reader advances into the footer:
+
+1. The CTA starts in a stable, readable composition with the Operator Brief
+   fully visible.
+2. The brief drifts upward by roughly 8–12% of its panel height and dims
+   slightly. This is scroll-led, not an autoplay animation.
+3. A new original closing `Signal Terrain` rises from the bottom foreground.
+   It is a lower, darker companion to the hero terrain: layered operational
+   contours, sparse route lines, and one restrained lime signal—never literal
+   dunes, plants, or a landscape photograph.
+4. The terrain masks the lower part of the brief, then fades to full black.
+   The footer begins on that exact black surface with no visible seam.
+
+Generate this terrain as a distinct original asset before implementation. It
+must share the hero terrain's charcoal, low-contrast, operational mood without
+reusing the hero image or treating the reference's desert imagery as runtime
+artwork.
+
+With `prefers-reduced-motion`, the operator brief and terrain remain static in
+their composed positions. The CTA and footer stay fully usable without the
+parallax sequence.
+
+### Footer
+
+The footer remains sparse and functional below the closing terrain. It carries
+the NEXORA wordmark and one-line positioning, then three compact link groups:
+
+| Group | Links |
+| --- | --- |
+| **Product** | Capabilities, Integrations, Pricing |
+| **Company** | About, Contact |
+| **Trust** | Security, Privacy, Terms |
+
+Include a copyright line and reserve a compact location for one future contact
+or social link (LinkedIn or email) without inventing a live profile. On mobile,
+the wordmark/positioning leads; footer groups stack in normal flow with clear
+tap targets. All internal links point to valid sections or destinations before
+release.
 
 ## Next decisions
 
