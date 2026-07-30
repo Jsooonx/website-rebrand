@@ -52,6 +52,10 @@ The supplied FAQ reference is retained in `references/faq-reference.png`. It
 informs the useful relationship between category navigation and grouped
 accordion answers only; NEXORA uses original categories, question content,
 sticky behaviour, and accessible controls.
+The supplied testimonial reference is retained in
+`references/testimonials-reference.png`. It informs the focused quote/portrait
+composition and manual testimonial navigation only; NEXORA uses original
+people, company marks, outcomes, photography, and interaction detail.
 
 NEXORA will not reproduce its chat-agent framing, copy, landscape artwork,
 colour treatment, symmetrical product mockup, or decorative secondary CTA.
@@ -480,6 +484,59 @@ Below the category module sits a compact contact card:
   sticky positioning is used.
 - Reduced-motion users receive immediate category/accordion updates with only
   a minimal opacity change where helpful.
+
+## Section 7: Testimonials
+
+### Purpose and content
+
+Testimonials give the last human proof point before the closing conversion
+moment. The section remains deliberately simple: one complete customer story
+at a time, with an attributable operational outcome rather than a decorative
+quote carousel.
+
+- Eyebrow: `CUSTOMER STORIES / 07`
+- Heading: `Trusted when the network gets difficult.`
+- Supporting copy: `Operations teams use NEXORA to see risk earlier, align the
+  response, and recover with less disruption.`
+
+| Person | Role and fictional company | Quote direction | Outcome |
+| --- | --- | --- | --- |
+| **Asha Raman** | VP Operations, **Northline Supply** | Moving from exceptions spread across three systems to one agreed next action. | `31% faster exception resolution` |
+| **Tomas Wren** | Head of Fulfilment, **Fieldmark Commerce** | Seeing downstream effect before a late handoff becomes a customer issue. | `18% fewer preventable SLA misses` |
+| **Leila Sato** | Director of Customer Operations, **Morrow & Co.** | Giving service and distribution one shared operating picture. | `Two hours saved per daily escalation review` |
+
+All people, companies, marks, portraiture, and statistics are fictional for
+this exploration. Create original editorial portraits and compact monochrome
+company marks before implementation; do not use real client names, logos, or
+stock-person identities.
+
+### Layout and interaction
+
+- A large dark two-column testimonial card holds the quote, outcome, person,
+  company mark, and navigation on the left; the portrait is isolated in a
+  tall framed surface at right.
+- Company marks are original small monochrome vectors, placed beside or above
+  the attribution without dominating the quote.
+- Circular previous/next chevrons and a concise `01 / 03` or three-position
+  indicator provide the only navigation. The carousel never auto-plays.
+- When the reader changes story, the outgoing quote shifts/fades briefly, the
+  next quote resolves in place, and the portrait crossfades with a small
+  controlled crop movement. Company mark, attribution, and outcome update in
+  the same state change.
+- Reduced-motion users receive an immediate opacity-based state swap with no
+  spatial portrait movement.
+
+### Accessibility and responsive behaviour
+
+- Chevron buttons name the destination story, for example `Show Tomas Wren's
+  story`, and disabled/wrap behaviour remains consistent. The chosen
+  implementation may wrap from final to first only if the current position is
+  also conveyed clearly.
+- Do not announce carousel changes automatically. A user-triggered update may
+  use a polite status label such as `Story 2 of 3`.
+- On mobile, the quote, attribution, controls, and outcome precede the
+  portrait in normal document order. The image is a shorter wide crop below
+  the text.
 
 ## Next decisions
 
