@@ -3,17 +3,15 @@ import { describe, expect, it } from "vitest";
 import { ClosingCta } from "./ClosingCta";
 
 describe("ClosingCta", () => {
-  it("pairs the briefing action with the operator brief and product-posture signals", () => {
+  it("pairs the get-started action with the workspace and no terrain image", () => {
     render(<ClosingCta />);
 
     expect(
       screen.getByRole("heading", {
-        name: "See the next move before it becomes urgent.",
+        name: "Get started today",
       }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Operator Brief" })).toBeInTheDocument();
-    expect(screen.getByText("Approval-aware workflows")).toBeInTheDocument();
-    expect(screen.getByText("Traceable operational decisions")).toBeInTheDocument();
-    expect(screen.getByText("Built for distributed teams")).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "NEXORA ask workspace" })).toBeInTheDocument();
+    expect(screen.queryByAltText(/terrain/i)).not.toBeInTheDocument();
   });
 });

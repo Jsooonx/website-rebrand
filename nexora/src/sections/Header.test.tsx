@@ -3,6 +3,13 @@ import userEvent from "@testing-library/user-event";
 import { Header } from "./Header";
 
 describe("Header", () => {
+  it("uses the reference navigation labels and compact get-started action", () => {
+    render(<Header />);
+
+    expect(screen.getByRole("link", { name: "Features" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Get started" })).toBeInTheDocument();
+  });
+
   it("opens and closes the mobile navigation accessibly", async () => {
     const user = userEvent.setup();
     render(<Header />);
