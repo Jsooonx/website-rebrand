@@ -519,4 +519,16 @@ The rework is accepted when:
    different product design.
 9. Automated tests and the production build pass.
 10. Browser review shows no overflow, broken assets, missing section labels,
-    or console errors.
+   or console errors.
+
+## 20. Section rework amendment (2026-07-31)
+
+The Why NEXORA rail now uses cropped product-proof views instead of custom SVG
+illustrations. Its five cards show connected memory, inline evidence, prepared
+actions, guardrails, and recurring patterns using the NEXORA visual language.
+
+The integrations fan is replaced with an accessible hub-and-flow map. Fictional
+context sources lead into a NEXORA core; destinations show where verified work
+goes next. Hover, focus, and tap highlight one route at a time. The four
+supporting columns now describe the flow: connect context, ground every answer,
+route the next action, and learn from outcomes.

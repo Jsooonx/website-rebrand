@@ -1,16 +1,16 @@
-import type { CSSProperties } from "react";
-import { BrandMark } from "../components/ui/BrandMark";
 import { Icon, type IconName } from "../components/ui/Icon";
 import { SectionHeader } from "../components/ui/SectionHeader";
-import { IntegrationMark } from "../components/visuals/IntegrationMark";
-import { integrationGroups } from "../content/siteData";
+import { IntegrationFlow } from "../components/visuals/IntegrationFlow";
 
-const outerAngles = [-76, -48, -18, 14, 45, 74];
-const innerAngles = [-68, -30, 4, 40, 68];
-function FanNode({ index, angle, radius }: { index: number; angle: number; radius: string }) { return <span className="integration-node" style={{ "--node-angle": `${angle}deg`, "--node-radius": radius } as CSSProperties}><IntegrationMark index={index} /></span>; }
+const integrationSteps = [
+  { id: "context", title: "Connect context", description: "Bring the work systems behind every question into the same workspace.", icon: "plug" },
+  { id: "ground", title: "Ground every answer", description: "Keep sources, records, and policy context visible when it matters.", icon: "spark" },
+  { id: "route", title: "Route the next action", description: "Send the prepared task, update, or approval to the right place.", icon: "arrow-right" },
+  { id: "learn", title: "Learn from outcomes", description: "Turn recurring work into clearer signals for the whole team.", icon: "chart" },
+] as const;
 
 export function Integrations() { return <section id="integrations" className="section section--integrations" aria-labelledby="integrations-title"><div className="section__inner">
   <SectionHeader eyebrow="Integrations" index="04" titleId="integrations-title" title="Connect the systems behind your workflow" description="NEXORA plugs into your docs, CRM, support stack, and internal tools to turn scattered context into clear answers and action." />
-  <div className="integration-fan-wrap"><div className="integration-fan" data-testid="integration-fan" aria-hidden="true"><div className="integration-orbit integration-orbit--outer">{outerAngles.map((angle, index) => <FanNode key={angle} index={index} angle={angle} radius="clamp(12rem, 34vw, 31rem)" />)}</div><div className="integration-orbit integration-orbit--inner">{innerAngles.map((angle, index) => <FanNode key={angle} index={index + 3} angle={angle} radius="clamp(8rem, 24vw, 21rem)" />)}</div><span className="integration-arc integration-arc--outer" /><span className="integration-arc integration-arc--inner" /><span className="integration-arc integration-arc--core" /><div className="integration-core"><BrandMark variant="symbol" /><span>NEXORA core</span></div></div></div>
-  <div className="integration-groups">{integrationGroups.map((group, index) => <article className="integration-group" key={group.id}><div className="integration-group__index">0{index + 1}</div><Icon name={group.icon as IconName} /><h3>{group.title}</h3><p>{group.description}</p></article>)}</div>
+  <div className="integration-flow-wrap"><IntegrationFlow /></div>
+  <div className="integration-groups">{integrationSteps.map((step, index) => <article className="integration-group" key={step.id}><div className="integration-group__index">0{index + 1}</div><Icon name={step.icon as IconName} /><h3>{step.title}</h3><p>{step.description}</p></article>)}</div>
 </div></section>; }
