@@ -1,3 +1,19 @@
+export type WorkspaceMode = "ask" | "verify" | "execute" | "measure";
+
+export interface WorkspaceModeDefinition {
+  id: WorkspaceMode;
+  label: string;
+  eyebrow: string;
+  metric: string;
+}
+
+export const workspaceModes: readonly WorkspaceModeDefinition[] = [
+  { id: "ask", label: "Ask", eyebrow: "Connected context", metric: "3 sources connected" },
+  { id: "verify", label: "Verify", eyebrow: "Trusted answer", metric: "94% confidence" },
+  { id: "execute", label: "Execute", eyebrow: "Action preview", metric: "Approval ready" },
+  { id: "measure", label: "Measure", eyebrow: "Continuous insight", metric: "28% trend detected" },
+] as const;
+
 export type CapabilityId = "detect" | "explain" | "coordinate" | "learn";
 
 export interface CapabilityTab {
