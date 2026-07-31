@@ -1,9 +1,8 @@
 import {
-  capabilityTabs,
   faqGroups,
   plans,
   testimonials,
-  whyCards,
+  workspaceModes,
 } from "./siteData";
 
 function expectUniqueIds(items: readonly { id: string }[]) {
@@ -12,15 +11,13 @@ function expectUniqueIds(items: readonly { id: string }[]) {
 
 describe("NEXORA content model", () => {
   it("contains the approved section content with unique identities", () => {
-    expect(capabilityTabs).toHaveLength(4);
-    expect(whyCards).toHaveLength(5);
+    expect(workspaceModes).toHaveLength(4);
     expect(plans).toHaveLength(3);
     expect(faqGroups).toHaveLength(3);
     expect(testimonials).toHaveLength(3);
 
     [
-      capabilityTabs,
-      whyCards,
+      workspaceModes,
       plans,
       faqGroups,
       testimonials,
@@ -28,11 +25,11 @@ describe("NEXORA content model", () => {
   });
 
   it("uses the approved capability sequence", () => {
-    expect(capabilityTabs.map((tab) => tab.label)).toEqual([
-      "Detect",
-      "Explain",
-      "Coordinate",
-      "Learn",
+    expect(workspaceModes.map((tab) => tab.label)).toEqual([
+      "Ask",
+      "Verify",
+      "Execute",
+      "Measure",
     ]);
   });
 });

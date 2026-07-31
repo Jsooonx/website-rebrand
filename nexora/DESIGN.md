@@ -1,6 +1,6 @@
 # NEXORA Reference-Fidelity Rework
 
-Status: approved design direction, ready for implementation
+Status: implemented and validated
 Date: 2026-07-31
 
 ## 1. Rework objective

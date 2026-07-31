@@ -7,13 +7,8 @@ describe("NEXORA application shell", () => {
 
     expect(screen.getByRole("main")).toBeInTheDocument();
     expect(screen.getAllByText("NEXORA").length).toBeGreaterThan(0);
-    expect(
-      screen.getByRole("region", { name: "From signal to decision." }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("region", {
-        name: "Trusted when the network gets difficult.",
-      }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /one AI workspace for answers and action/i })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: /one connected workspace for your entire organization/i })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: /get started today/i })).toBeInTheDocument();
   });
 });

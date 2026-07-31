@@ -1,4 +1,5 @@
 export type WorkspaceMode = "ask" | "verify" | "execute" | "measure";
+export type WhyDiagramType = "early" | "trace" | "align" | "control" | "learn";
 
 export interface WorkspaceModeDefinition { id: WorkspaceMode; label: string; eyebrow: string; metric: string; }
 
