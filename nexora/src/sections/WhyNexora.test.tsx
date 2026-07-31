@@ -16,5 +16,6 @@ describe("Why NEXORA rail", () => {
     await user.click(next);
     expect(previous).not.toBeDisabled();
     expect(screen.getByText("02 / 05")).toBeInTheDocument();
+    expect(screen.getByText("Sourced answers")).toBeInTheDocument();
   });
 });
