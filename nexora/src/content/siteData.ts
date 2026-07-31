@@ -1,395 +1,60 @@
 export type WorkspaceMode = "ask" | "verify" | "execute" | "measure";
 
-export interface WorkspaceModeDefinition {
-  id: WorkspaceMode;
-  label: string;
-  eyebrow: string;
-  metric: string;
-}
+export interface WorkspaceModeDefinition { id: WorkspaceMode; label: string; eyebrow: string; metric: string; }
 
 export const workspaceModes: readonly WorkspaceModeDefinition[] = [
   { id: "ask", label: "Ask", eyebrow: "Connected context", metric: "3 sources connected" },
-  { id: "verify", label: "Verify", eyebrow: "Trusted answer", metric: "94% confidence" },
+  { id: "verify", label: "Verify", eyebrow: "Trusted answers", metric: "94% confidence" },
   { id: "execute", label: "Execute", eyebrow: "Action preview", metric: "Approval ready" },
   { id: "measure", label: "Measure", eyebrow: "Continuous insight", metric: "28% trend detected" },
 ] as const;
 
-export type CapabilityId = "detect" | "explain" | "coordinate" | "learn";
-
-export interface CapabilityTab {
-  id: CapabilityId;
-  label: string;
-  eyebrow: string;
-  title: string;
-  summary: string;
-  metric: string;
-}
-
-export const capabilityTabs: readonly CapabilityTab[] = [
-  {
-    id: "detect",
-    label: "Detect",
-    eyebrow: "Signal map",
-    title: "Know where attention belongs.",
-    summary:
-      "Live inventory, route, and order signals become one ranked operating picture.",
-    metric: "12 live signals · 3 need attention",
-  },
-  {
-    id: "explain",
-    label: "Explain",
-    eyebrow: "Cause trace",
-    title: "See what changed—and what it touches next.",
-    summary:
-      "Trace a delayed handoff through stock exposure, downstream orders, and service risk.",
-    metric: "4 dependencies mapped in 1.2s",
-  },
-  {
-    id: "coordinate",
-    label: "Coordinate",
-    eyebrow: "Response plan",
-    title: "Give the response an owner.",
-    summary:
-      "Turn the signal into a reroute, approval, and accountable next action without losing context.",
-    metric: "Owner assigned · approval ready",
-  },
-  {
-    id: "learn",
-    label: "Learn",
-    eyebrow: "Impact review",
-    title: "Make the next recovery faster.",
-    summary:
-      "Compare response time, prevented disruption, and weak points across every location.",
-    metric: "31% faster exception recovery",
-  },
-] as const;
-
-export type WhyDiagramType =
-  | "early"
-  | "trace"
-  | "align"
-  | "control"
-  | "learn";
-
-export interface WhyCard {
-  id: string;
-  title: string;
-  description: string;
-  diagram: WhyDiagramType;
-}
-
-export const whyCards: readonly WhyCard[] = [
-  {
-    id: "early",
-    title: "See it early",
-    description: "Surface risk before a local exception becomes broad disruption.",
-    diagram: "early",
-  },
-  {
-    id: "trace",
-    title: "Trace the cause",
-    description: "Understand the source and its downstream effect—not only the symptom.",
-    diagram: "trace",
-  },
-  {
-    id: "align",
-    title: "Align the response",
-    description: "Give every owner the same context, sequence, and accountable action.",
-    diagram: "align",
-  },
-  {
-    id: "control",
-    title: "Keep humans in control",
-    description: "Hold recommendations inside your approvals and operational guardrails.",
-    diagram: "control",
-  },
-  {
-    id: "learning",
-    title: "Learn from every move",
-    description: "Feed each outcome into a stronger response for the next disruption.",
-    diagram: "learn",
-  },
-] as const;
-
 export const integrationGroups = [
-  {
-    id: "warehouse",
-    title: "Warehouse systems",
-    description: "Stock, scan events, fulfilment, and exceptions.",
-    icon: "warehouse",
-  },
-  {
-    id: "transport",
-    title: "Transport networks",
-    description: "ETA, route changes, and carrier handoffs.",
-    icon: "route",
-  },
-  {
-    id: "orders",
-    title: "Orders and ERP",
-    description: "Demand, purchase orders, and exposure.",
-    icon: "layers",
-  },
-  {
-    id: "customer",
-    title: "Customer operations",
-    description: "SLA risk, escalations, and service impact.",
-    icon: "signal",
-  },
+  { id: "source", title: "Source connect", description: "Connect helpdesk, CRM, and knowledge.", icon: "layers" },
+  { id: "action", title: "Action runner", description: "Connect helpdesk, CRM, and knowledge.", icon: "signal" },
+  { id: "approval", title: "Approval gate", description: "Require approval for sensitive actions.", icon: "check" },
+  { id: "audit", title: "Audit and insights", description: "Track every change and spot patterns.", icon: "route" },
 ] as const;
 
-export interface Plan {
-  id: string;
-  name: string;
-  monthlyPrice: string;
-  annualPrice: string;
-  description: string;
-  featured?: boolean;
-  badge?: string;
-  cta: string;
-  features: readonly string[];
-}
+export interface Plan { id: string; name: string; monthlyPrice: string; annualPrice: string; description: string; featured?: boolean; badge?: string; cta: string; features: readonly string[]; }
 
 export const plans: readonly Plan[] = [
-  {
-    id: "signal",
-    name: "Signal",
-    monthlyPrice: "1,200",
-    annualPrice: "1,000",
-    description: "For teams operating up to three locations with core data sources.",
-    cta: "Request briefing",
-    features: [
-      "Up to 3 monitored facilities",
-      "4 connected data sources",
-      "Hourly signal refresh",
-      "Core attention queue",
-      "Standard implementation",
-    ],
-  },
-  {
-    id: "control",
-    name: "Control",
-    monthlyPrice: "2,800",
-    annualPrice: "2,350",
-    description:
-      "For multi-location networks that need response plans and approval flows.",
-    featured: true,
-    badge: "Recommended for multi-site teams",
-    cta: "Request briefing",
-    features: [
-      "Up to 12 monitored facilities",
-      "Unlimited core data sources",
-      "15-minute signal refresh",
-      "Response plans and approvals",
-      "Guided implementation",
-    ],
-  },
-  {
-    id: "network",
-    name: "Network",
-    monthlyPrice: "Custom",
-    annualPrice: "Custom",
-    description:
-      "For complex operations, regional rollout, and custom integrations.",
-    cta: "Talk to NEXORA",
-    features: [
-      "Custom operating footprint",
-      "Custom system connectors",
-      "Near-live refresh options",
-      "Advanced audit controls",
-      "Dedicated rollout partner",
-    ],
-  },
+  { id: "starter", name: "Starter", monthlyPrice: "Free", annualPrice: "Free", description: "For small teams getting started with AI support.", cta: "Get started", features: ["Team members: up to 3", "AI queries / mo: 200", "Integrations: 2", "Source attribution", "Conversation history"] },
+  { id: "team", name: "Team", monthlyPrice: "39", annualPrice: "32", description: "For teams that need connected answers and accountable actions.", featured: true, badge: "Most popular", cta: "Get started", features: ["Team members: unlimited", "AI queries / mo: 2,000", "Integrations: unlimited", "Source attribution", "Conversation history"] },
+  { id: "enterprise", name: "Enterprise", monthlyPrice: "Custom", annualPrice: "Custom", description: "For organizations needing security, governance, and scale.", cta: "Talk to us", features: ["Team members: custom", "AI queries: custom", "Integrations: unlimited", "Approval workflows", "Advanced audit controls"] },
 ] as const;
 
-export interface FaqItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-export interface FaqGroup {
-  id: string;
-  label: string;
-  items: readonly FaqItem[];
-}
+export interface FaqItem { id: string; question: string; answer: string; }
+export interface FaqGroup { id: string; label: string; items: readonly FaqItem[]; }
 
 export const faqGroups: readonly FaqGroup[] = [
-  {
-    id: "product",
-    label: "Product & operations",
-    items: [
-      {
-        id: "monitor",
-        question: "What does NEXORA monitor?",
-        answer:
-          "NEXORA reads the inventory, route, order, and service signals you choose, then ranks the changes that could affect the wider network.",
-      },
-      {
-        id: "priority",
-        question: "How are signals prioritised?",
-        answer:
-          "Priority combines operational exposure, urgency, affected locations, and the cost of waiting. Your team can tune those rules by workflow.",
-      },
-      {
-        id: "brief",
-        question: "Who uses the daily brief?",
-        answer:
-          "Operations leaders get the network view while facility, fulfilment, and customer teams receive the part of the response they own.",
-      },
-      {
-        id: "actions",
-        question: "Does NEXORA take action automatically?",
-        answer:
-          "Only inside the guardrails you define. Sensitive reroutes, order changes, and escalations can always require an accountable human approval.",
-      },
-      {
-        id: "locations",
-        question: "Can each location use different rules?",
-        answer:
-          "Yes. Shared policies keep the network aligned, while local thresholds and ownership can reflect the way each facility operates.",
-      },
-    ],
-  },
-  {
-    id: "implementation",
-    label: "Implementation & integrations",
-    items: [
-      {
-        id: "timeline",
-        question: "How long does onboarding take?",
-        answer:
-          "A focused first signal set can be live in two to four weeks. Wider regional rollouts are staged by system and operating team.",
-      },
-      {
-        id: "systems",
-        question: "Which systems can NEXORA connect to?",
-        answer:
-          "Warehouse, transport, ERP, order, and customer-operations systems can be connected through APIs, scheduled feeds, or secure exports.",
-      },
-      {
-        id: "readiness",
-        question: "What data needs to be prepared?",
-        answer:
-          "We start with the decisions you want to improve, then identify the smallest reliable set of events, ownership data, and operational context.",
-      },
-      {
-        id: "replace",
-        question: "Do we need to replace our current dashboards?",
-        answer:
-          "No. NEXORA sits across your existing systems and directs attention back to the source workflow when a deeper operational action is required.",
-      },
-      {
-        id: "support",
-        question: "Who supports the rollout?",
-        answer:
-          "Every plan includes implementation support. Control and Network add guided workflow design, stakeholder reviews, and rollout measurement.",
-      },
-    ],
-  },
-  {
-    id: "governance",
-    label: "Governance & commercial",
-    items: [
-      {
-        id: "approval",
-        question: "Can we require approval before action?",
-        answer:
-          "Yes. Approvals can be required by action type, exposure, location, or team, with a named owner and expiry window.",
-      },
-      {
-        id: "audit",
-        question: "What is captured in the audit trail?",
-        answer:
-          "NEXORA records the signal, context available at the time, recommendation, human decision, action owner, and measured outcome.",
-      },
-      {
-        id: "security",
-        question: "How is access controlled?",
-        answer:
-          "Role-based access, scoped data views, and identity-provider integration keep operational detail limited to the teams that need it.",
-      },
-      {
-        id: "pricing",
-        question: "How does pricing scale?",
-        answer:
-          "Pricing follows monitored facilities, connected systems, refresh cadence, workflow depth, and the implementation support your network requires.",
-      },
-      {
-        id: "annual",
-        question: "Can we start monthly and move to annual billing?",
-        answer:
-          "Yes. Teams can validate an initial signal set monthly, then move to annual billing as the operating footprint expands.",
-      },
-    ],
-  },
+  { id: "general", label: "General", items: [
+    { id: "what", question: "What is NEXORA and how does it work?", answer: "NEXORA is an AI workspace that connects your company context, answers work questions, and helps turn the next step into accountable action." },
+    { id: "setup", question: "How long does it take to set up?", answer: "Start with the sources your team already uses. A focused workspace can be useful in a single working session." },
+    { id: "technical", question: "Do I need technical knowledge to use NEXORA?", answer: "No. People ask questions in natural language while admins choose connected sources and access rules." },
+    { id: "free", question: "Is there a free plan available?", answer: "Yes. Starter gives a small team space to evaluate connected answers before scaling up." },
+  ] },
+  { id: "ai", label: "AI & capabilities", items: [
+    { id: "verify", question: "How does NEXORA verify answers?", answer: "Answers bring their sources forward, so people can inspect the records and policy context that informed them." },
+    { id: "actions", question: "Can NEXORA take action for my team?", answer: "It can prepare drafts, tickets, updates, and next steps. Sensitive actions can require named approval." },
+    { id: "measure", question: "What does Measure show?", answer: "Measure surfaces recurring questions, patterns, and knowledge gaps based on real workspace activity." },
+  ] },
+  { id: "security", label: "Integrations & security", items: [
+    { id: "connect", question: "Which systems can NEXORA connect to?", answer: "NEXORA connects knowledge bases, helpdesks, CRMs, and internal systems through the integrations your team chooses." },
+    { id: "access", question: "How is access controlled?", answer: "Workspace access can be scoped by role, source, and action so sensitive context stays with the right people." },
+    { id: "approval", question: "Can I require approvals before actions?", answer: "Yes. Approval gates can be set for the actions and workflows your organization considers sensitive." },
+  ] },
 ] as const;
 
-export interface Testimonial {
-  id: string;
-  person: string;
-  role: string;
-  company: string;
-  quote: string;
-  outcome: string;
-  image: string;
-}
-
+export interface Testimonial { id: string; person: string; role: string; company: string; quote: string; outcome: string; image: string; }
 export const testimonials: readonly Testimonial[] = [
-  {
-    id: "asha",
-    person: "Asha Raman",
-    role: "VP Operations",
-    company: "Northline Supply",
-    quote:
-      "We went from chasing exceptions across three systems to agreeing the next action in one briefing.",
-    outcome: "31% faster exception resolution",
-    image: "/images/testimonial-asha.webp",
-  },
-  {
-    id: "tomas",
-    person: "Tomas Wren",
-    role: "Head of Fulfilment",
-    company: "Fieldmark Commerce",
-    quote:
-      "The team now sees the knock-on effect before a late handoff becomes a customer problem.",
-    outcome: "18% fewer preventable SLA misses",
-    image: "/images/testimonial-tomas.webp",
-  },
-  {
-    id: "leila",
-    person: "Leila Sato",
-    role: "Director of Customer Operations",
-    company: "Morrow & Co.",
-    quote:
-      "NEXORA gave service and distribution the same operational picture for the first time.",
-    outcome: "Two hours saved per daily escalation review",
-    image: "/images/testimonial-leila.webp",
-  },
+  { id: "asha", person: "Asha Raman", role: "Head of Customer Operations", company: "Northline", quote: "NEXORA gives every agent the context and next action before they have to chase it across tools.", outcome: "Ticket resolution time reduced by 42%", image: "/images/testimonial-asha.webp" },
+  { id: "tomas", person: "Tomas Wren", role: "Director of Support", company: "Fieldmark", quote: "The sources are right beside the answer, so our team can move with confidence instead of forwarding questions.", outcome: "One shared view across support and success", image: "/images/testimonial-tomas.webp" },
+  { id: "leila", person: "Leila Sato", role: "VP Enablement", company: "Morrow", quote: "We moved from undocumented answers to a workspace that turns the team’s knowledge into useful work.", outcome: "2 hours saved in each weekly review", image: "/images/testimonial-leila.webp" },
 ] as const;
 
 export const footerGroups = [
-  {
-    title: "Product",
-    links: [
-      { label: "Capabilities", href: "#capabilities" },
-      { label: "Integrations", href: "#integrations" },
-      { label: "Pricing", href: "#pricing" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About", href: "#why" },
-      { label: "Contact", href: "#briefing" },
-    ],
-  },
-  {
-    title: "Trust",
-    links: [
-      { label: "Security", href: "#faq" },
-      { label: "Privacy", href: "#footer" },
-      { label: "Terms", href: "#footer" },
-    ],
-  },
+  { title: "Product", links: [{ label: "Homepage", href: "#top" }, { label: "Features", href: "#capabilities" }, { label: "Pricing", href: "#pricing" }, { label: "Get started", href: "#briefing" }] },
+  { title: "Company", links: [{ label: "About", href: "#why" }, { label: "Careers", href: "#footer" }, { label: "Blog", href: "#footer" }] },
+  { title: "Legal", links: [{ label: "Terms of use", href: "#footer" }, { label: "Privacy policy", href: "#footer" }, { label: "Cookie policy", href: "#footer" }] },
 ] as const;

@@ -9,10 +9,10 @@ describe("Faq", () => {
     render(<Faq />);
 
     const firstQuestion = screen.getByRole("button", {
-      name: "What does NEXORA monitor?",
+      name: "What is NEXORA and how does it work?",
     });
     const secondQuestion = screen.getByRole("button", {
-      name: "How are signals prioritised?",
+      name: "How long does it take to set up?",
     });
 
     expect(firstQuestion).toHaveAttribute("aria-expanded", "true");
@@ -24,11 +24,11 @@ describe("Faq", () => {
     expect(secondQuestion).toHaveAttribute("aria-expanded", "true");
 
     await user.click(
-      screen.getByRole("tab", { name: "Implementation & integrations" }),
+      screen.getByRole("tab", { name: "AI & capabilities" }),
     );
 
     expect(
-      screen.getByRole("button", { name: "How long does onboarding take?" }),
+      screen.getByRole("button", { name: "How does NEXORA verify answers?" }),
     ).toHaveAttribute("aria-expanded", "true");
   });
 });

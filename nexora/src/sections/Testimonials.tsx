@@ -19,11 +19,11 @@ export function Testimonials() {
     >
       <div className="section__inner">
         <SectionHeader
-          eyebrow="Customer stories"
+          eyebrow="Testimonials"
           index="07"
           titleId="testimonials-title"
-          title="Trusted when the network gets difficult."
-          description="Operations teams use NEXORA to see risk earlier, align the response, and recover with less disruption."
+          title="What enterprise teams say about NEXORA"
+          description="Teams rely on NEXORA to turn scattered knowledge into clear answers, faster decisions, and real progress."
         />
 
         <div className="testimonial-card">

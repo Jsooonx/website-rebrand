@@ -10,15 +10,15 @@ describe("Pricing", () => {
 
     const billingSwitch = screen.getByRole("switch", { name: "Use annual billing" });
     expect(billingSwitch).toHaveAttribute("aria-checked", "false");
-    expect(screen.getByText("$1,200")).toBeInTheDocument();
-    expect(screen.getByText("$2,800")).toBeInTheDocument();
+    expect(screen.getByText("$39")).toBeInTheDocument();
+    expect(screen.getByText("Free")).toBeInTheDocument();
     expect(screen.getByText("Custom")).toBeInTheDocument();
 
     await user.click(billingSwitch);
 
     expect(billingSwitch).toHaveAttribute("aria-checked", "true");
-    expect(await screen.findByText("$1,000")).toBeInTheDocument();
-    expect(screen.getByText("$2,350")).toBeInTheDocument();
+    expect(await screen.findByText("$32")).toBeInTheDocument();
+    expect(screen.getByText("Free")).toBeInTheDocument();
     expect(screen.getByText("Custom")).toBeInTheDocument();
   });
 });
