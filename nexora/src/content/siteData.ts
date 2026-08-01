@@ -1,61 +1,250 @@
-export type WorkspaceMode = "ask" | "verify" | "execute" | "measure";
-export type WhyDiagramType = "early" | "trace" | "align" | "control" | "learn";
+export type DossierStage = "collect" | "validate" | "act";
 
-export interface WorkspaceModeDefinition { id: WorkspaceMode; label: string; eyebrow: string; metric: string; }
+export interface CaseSource {
+  label: string;
+  detail: string;
+}
 
-export const workspaceModes: readonly WorkspaceModeDefinition[] = [
-  { id: "ask", label: "Ask", eyebrow: "Connected context", metric: "3 sources connected" },
-  { id: "verify", label: "Verify", eyebrow: "Trusted answers", metric: "94% confidence" },
-  { id: "execute", label: "Execute", eyebrow: "Action preview", metric: "Approval ready" },
-  { id: "measure", label: "Measure", eyebrow: "Continuous insight", metric: "28% trend detected" },
+export interface CaseFile {
+  request: string;
+  sources: readonly CaseSource[];
+  conclusion: string;
+  action: string;
+}
+
+export const caseFile: CaseFile = {
+  request: "Can we commit to the Acme renewal before Friday?",
+  sources: [
+    { label: "Renewal brief", detail: "Commercial terms awaiting confirmation" },
+    { label: "Support record", detail: "SSO incident resolved; follow-up complete" },
+    { label: "Billing policy", detail: "Finance approval required above threshold" },
+  ],
+  conclusion: "Verified conclusion: Acme can renew when finance confirms the revised invoice.",
+  action: "Action owner: Jordan Lee — request finance confirmation before Friday.",
+} as const;
+
+export interface WorkflowChapter {
+  id: DossierStage;
+  number: string;
+  label: string;
+  title: string;
+  summary: string;
+  evidence: string;
+}
+
+export const workflowChapters: readonly WorkflowChapter[] = [
+  {
+    id: "collect",
+    number: "01",
+    label: "Collect",
+    title: "Capture the request with its working context.",
+    summary: "A live case begins with the question, the people involved, and the records already close to the work.",
+    evidence: "3 attached records: renewal brief, support record, billing policy",
+  },
+  {
+    id: "validate",
+    number: "02",
+    label: "Validate",
+    title: "Turn connected records into a decision people can inspect.",
+    summary: "Nexora surfaces the evidence beside the conclusion, so the next step is anchored in the current source of truth.",
+    evidence: "Conclusion verified against policy and incident status",
+  },
+  {
+    id: "act",
+    number: "03",
+    label: "Act",
+    title: "Assign the accountable next move without losing the thread.",
+    summary: "The resolved decision becomes an owned action with a clear destination, due point, and review trail.",
+    evidence: "Action destination: Finance review — owner Jordan Lee",
+  },
 ] as const;
 
-export const integrationGroups = [
-  { id: "source", title: "Source connect", description: "Connect helpdesk, CRM, and knowledge.", icon: "layers" },
-  { id: "action", title: "Action runner", description: "Connect helpdesk, CRM, and knowledge.", icon: "signal" },
-  { id: "approval", title: "Approval gate", description: "Require approval for sensitive actions.", icon: "check" },
-  { id: "audit", title: "Audit and insights", description: "Track every change and spot patterns.", icon: "route" },
+export interface PracticeScenario {
+  id: string;
+  label: string;
+  problem: string;
+  signal: string;
+  outcome: string;
+}
+
+export const practiceScenarios: readonly PracticeScenario[] = [
+  {
+    id: "renewal-risk",
+    label: "Renewal risk",
+    problem: "A strategic renewal stalls between support, finance, and account ownership.",
+    signal: "Two unresolved dependencies across three systems",
+    outcome: "A verified renewal path with one named next action",
+  },
+  {
+    id: "incident-response",
+    label: "Incident response",
+    problem: "An incident handoff lacks a current record of customer impact and remediation.",
+    signal: "The latest support and status evidence is attached to the working case",
+    outcome: "A ready-to-send customer update with a review trail",
+  },
+  {
+    id: "policy-review",
+    label: "Policy review",
+    problem: "A sensitive exception needs a decision that reflects policy, owner, and approval history.",
+    signal: "Policy clauses and approval conditions remain visible in the file",
+    outcome: "A documented approval request routed to the correct owner",
+  },
 ] as const;
 
-export interface Plan { id: string; name: string; monthlyPrice: string; annualPrice: string; description: string; featured?: boolean; badge?: string; cta: string; features: readonly string[]; }
+export interface SystemRow {
+  id: string;
+  source: string;
+  reasoning: string;
+  output: string;
+}
 
-export const plans: readonly Plan[] = [
-  { id: "starter", name: "Starter", monthlyPrice: "Free", annualPrice: "Free", description: "For small teams getting started with AI support.", cta: "Get started", features: ["Team members: up to 3", "AI queries / mo: 200", "Integrations: 2", "Source attribution", "Conversation history"] },
-  { id: "team", name: "Team", monthlyPrice: "39", annualPrice: "32", description: "For teams that need connected answers and accountable actions.", featured: true, badge: "Most popular", cta: "Get started", features: ["Team members: unlimited", "AI queries / mo: 2,000", "Integrations: unlimited", "Source attribution", "Conversation history"] },
-  { id: "enterprise", name: "Enterprise", monthlyPrice: "Custom", annualPrice: "Custom", description: "For organizations needing security, governance, and scale.", cta: "Talk to us", features: ["Team members: custom", "AI queries: custom", "Integrations: unlimited", "Approval workflows", "Advanced audit controls"] },
+export const systemRows: readonly SystemRow[] = [
+  { id: "docs-answer", source: "Docs", reasoning: "Policy context", output: "Verified answer" },
+  { id: "crm-owner", source: "CRM", reasoning: "Account context", output: "Assigned owner" },
+  { id: "support-ticket", source: "Support", reasoning: "Incident context", output: "Prepared ticket" },
+  { id: "data-insight", source: "Data", reasoning: "Pattern context", output: "Review signal" },
 ] as const;
 
-export interface FaqItem { id: string; question: string; answer: string; }
-export interface FaqGroup { id: string; label: string; items: readonly FaqItem[]; }
+export interface AdoptionPath {
+  id: string;
+  name: string;
+  price: string;
+  priceNote: string;
+  intendedUse: string;
+  operatingMode: string;
+  detail: string;
+  featured?: boolean;
+}
 
-export const faqGroups: readonly FaqGroup[] = [
-  { id: "general", label: "General", items: [
-    { id: "what", question: "What is NEXORA and how does it work?", answer: "NEXORA is an AI workspace that connects your company context, answers work questions, and helps turn the next step into accountable action." },
-    { id: "setup", question: "How long does it take to set up?", answer: "Start with the sources your team already uses. A focused workspace can be useful in a single working session." },
-    { id: "technical", question: "Do I need technical knowledge to use NEXORA?", answer: "No. People ask questions in natural language while admins choose connected sources and access rules." },
-    { id: "free", question: "Is there a free plan available?", answer: "Yes. Starter gives a small team space to evaluate connected answers before scaling up." },
-  ] },
-  { id: "ai", label: "AI & capabilities", items: [
-    { id: "verify", question: "How does NEXORA verify answers?", answer: "Answers bring their sources forward, so people can inspect the records and policy context that informed them." },
-    { id: "actions", question: "Can NEXORA take action for my team?", answer: "It can prepare drafts, tickets, updates, and next steps. Sensitive actions can require named approval." },
-    { id: "measure", question: "What does Measure show?", answer: "Measure surfaces recurring questions, patterns, and knowledge gaps based on real workspace activity." },
-  ] },
-  { id: "security", label: "Integrations & security", items: [
-    { id: "connect", question: "Which systems can NEXORA connect to?", answer: "NEXORA connects knowledge bases, helpdesks, CRMs, and internal systems through the integrations your team chooses." },
-    { id: "access", question: "How is access controlled?", answer: "Workspace access can be scoped by role, source, and action so sensitive context stays with the right people." },
-    { id: "approval", question: "Can I require approvals before actions?", answer: "Yes. Approval gates can be set for the actions and workflows your organization considers sensitive." },
-  ] },
+export const adoptionPaths: readonly AdoptionPath[] = [
+  {
+    id: "explore",
+    name: "Explore",
+    price: "$0",
+    priceNote: "per workspace / month",
+    intendedUse: "For a focused team testing one recurring work question.",
+    operatingMode: "Connected case review",
+    detail: "One recurring question, connected context, and a clear handoff.",
+  },
+  {
+    id: "coordinate",
+    name: "Coordinate",
+    price: "$29",
+    priceNote: "per seat / month",
+    intendedUse: "For teams aligning evidence, decisions, and owners across a workflow.",
+    operatingMode: "Shared operating case",
+    detail: "Shared evidence, aligned decisions, and visible ownership.",
+    featured: true,
+  },
+  {
+    id: "govern",
+    name: "Govern",
+    price: "$79",
+    priceNote: "per seat / month",
+    intendedUse: "For operating groups that need visible review paths for sensitive decisions.",
+    operatingMode: "Accountable decision trail",
+    detail: "Approval-aware actions with a complete decision trail.",
+  },
 ] as const;
 
-export interface Testimonial { id: string; person: string; role: string; company: string; quote: string; outcome: string; image: string; }
-export const testimonials: readonly Testimonial[] = [
-  { id: "asha", person: "Asha Raman", role: "Head of Customer Operations", company: "Northline", quote: "NEXORA gives every agent the context and next action before they have to chase it across tools.", outcome: "Ticket resolution time reduced by 42%", image: "/images/testimonial-asha.webp" },
-  { id: "tomas", person: "Tomas Wren", role: "Director of Support", company: "Fieldmark", quote: "The sources are right beside the answer, so our team can move with confidence instead of forwarding questions.", outcome: "One shared view across support and success", image: "/images/testimonial-tomas.webp" },
-  { id: "leila", person: "Leila Sato", role: "VP Enablement", company: "Morrow", quote: "We moved from undocumented answers to a workspace that turns the team’s knowledge into useful work.", outcome: "2 hours saved in each weekly review", image: "/images/testimonial-leila.webp" },
+export interface FieldNote {
+  id: string;
+  keyword: string;
+  question: string;
+  answer: string;
+}
+
+export const fieldNotes: readonly FieldNote[] = [
+  {
+    id: "what-is-nexora",
+    keyword: "Purpose",
+    question: "What is Nexora?",
+    answer: "Nexora turns a work request and connected context into a verified decision and accountable next action.",
+  },
+  {
+    id: "how-evidence-works",
+    keyword: "Evidence",
+    question: "How does Nexora validate a decision?",
+    answer: "The relevant source records stay alongside the conclusion, so a person can inspect the basis for the next step.",
+  },
+  {
+    id: "how-actions-work",
+    keyword: "Action",
+    question: "What happens after the decision?",
+    answer: "The case resolves into a destination, an accountable owner, and a readable review trail rather than an unsupported automated action.",
+  },
+  {
+    id: "start",
+    keyword: "Start",
+    question: "How quickly can a team start?",
+    answer: "Start with one recurring work question, connect the records around it, and expand the workflow once the first handoff is clear.",
+  },
 ] as const;
+
+export interface ScenarioStory {
+  id: string;
+  role: string;
+  portrait: string;
+  label: string;
+  story: string;
+  result: string;
+}
+
+export const scenarioStories: readonly ScenarioStory[] = [
+  {
+    id: "account-lead",
+    role: "Account lead",
+    portrait: "/images/scenario-lead.png",
+    label: "Workflow snapshot",
+    story: "A renewal owner opens one case instead of reconstructing the account across an inbox, a support queue, and a finance thread.",
+    result: "Result: the renewal dependency is verified and routed to its named owner.",
+  },
+  {
+    id: "support-operator",
+    role: "Support operator",
+    portrait: "/images/scenario-support.png",
+    label: "Workflow snapshot",
+    story: "An operator assembles the current incident record, drafts the update, and leaves the next handoff with the team that owns it.",
+    result: "Result: customer communication retains the supporting record.",
+  },
+  {
+    id: "policy-reviewer",
+    role: "Policy reviewer",
+    portrait: "/images/scenario-policy.png",
+    label: "Workflow snapshot",
+    story: "A reviewer sees the exception request, governing clauses, and approval route together before making a sensitive decision.",
+    result: "Result: the decision has a visible policy basis and review path.",
+  },
+] as const;
+
+export const closingCase = {
+  label: "Resolved case",
+  title: "The Acme renewal is ready for finance confirmation.",
+  detail: "Three records checked. One owner assigned. Review due before Friday.",
+} as const;
 
 export const footerGroups = [
-  { title: "Product", links: [{ label: "Homepage", href: "#top" }, { label: "Features", href: "#capabilities" }, { label: "Pricing", href: "#pricing" }, { label: "Get started", href: "#briefing" }] },
-  { title: "Company", links: [{ label: "About", href: "#why" }, { label: "Careers", href: "#footer" }, { label: "Blog", href: "#footer" }] },
-  { title: "Legal", links: [{ label: "Terms of use", href: "#footer" }, { label: "Privacy policy", href: "#footer" }, { label: "Cookie policy", href: "#footer" }] },
+  {
+    title: "Dossier",
+    links: [
+      { label: "Live case", href: "#top" },
+      { label: "Workflow", href: "#workflow" },
+      { label: "Scenarios", href: "#scenarios" },
+    ],
+  },
+  {
+    title: "System",
+    links: [
+      { label: "Systems index", href: "#systems" },
+      { label: "Adoption paths", href: "#adoption" },
+      { label: "Field notes", href: "#field-notes" },
+    ],
+  },
+  {
+    title: "Stackframe",
+    links: [
+      { label: "Nexora", href: "#top" },
+      { label: "Contact", href: "#footer" },
+    ],
+  },
 ] as const;

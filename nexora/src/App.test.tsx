@@ -2,13 +2,16 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 describe("NEXORA application shell", () => {
-  it("renders the brand and main content landmark", () => {
+  it("renders the operational dossier sequence instead of the legacy testimonial page", () => {
     render(<App />);
 
     expect(screen.getByRole("main")).toBeInTheDocument();
-    expect(screen.getAllByText("NEXORA").length).toBeGreaterThan(0);
-    expect(screen.getByRole("heading", { name: /one AI workspace for answers and action/i })).toBeInTheDocument();
-    expect(screen.getByRole("region", { name: /one connected workspace for your entire organization/i })).toBeInTheDocument();
-    expect(screen.getByRole("region", { name: /get started today/i })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "Live case" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /collect/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /three situations/i })).toBeInTheDocument();
+    expect(screen.getByText(/operating paths/i)).toBeInTheDocument();
+    expect(screen.getByText(/^workflow snapshot$/i)).toBeInTheDocument();
+    expect(screen.queryByText(/pricing plans/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/testimonials/i)).not.toBeInTheDocument();
   });
 });

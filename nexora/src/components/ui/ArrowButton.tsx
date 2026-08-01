@@ -1,5 +1,5 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
-import { Icon } from "./Icon";
+import { PillActionContent } from "./PillActionContent";
 
 type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
@@ -19,14 +19,9 @@ export function ArrowButton({
   children,
   ...props
 }: ArrowButtonProps) {
-  const classes = `arrow-button ${direction === "left" ? "arrow-button--left" : ""} ${className}`;
-  const content = (
-    <>
-      {direction === "left" && <Icon name="arrow-left" size={16} />}
-      <span>{children}</span>
-      {direction === "right" && <Icon name="arrow-right" size={16} />}
-    </>
-  );
+  const isCta = "href" in props && Boolean(props.href);
+  const classes = `arrow-button ${isCta ? "arrow-button--cta" : ""} ${direction === "left" ? "arrow-button--left" : ""} ${className}`;
+  const content = <PillActionContent direction={direction} withArrow>{children}</PillActionContent>;
 
   if ("href" in props && props.href) {
     return (

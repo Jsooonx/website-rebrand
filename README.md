@@ -15,7 +15,7 @@ fresh brand identities, visual directions, and responsive implementations.
 | 6 | PHASE | A fictional Jakarta creative studio with an editorial portfolio, original campaign worlds, and expressive motion systems. | [Fuel / Framer](https://fuel.framer.website/) |
 | 7 | ROUGE | A fictional independent art-direction studio building visual worlds, campaigns, and digital presences for culture-led brands. | [Taylor Designer / Framer](https://taylordesigner.framer.website/) |
 | 8 | NOCTRA | A fictional nocturnal editorial studio shaping identity systems, campaign language, digital environments, and launch worlds. | [DRUK Studio / Framer](https://drukstudio.framer.website/) |
-| 9 | NEXORA | A fictional operations-intelligence platform helping distribution teams detect disruption, understand impact, and coordinate the next move. | Supplied Powder template screenshots |
+| 9 | NEXORA | A fictional operational workspace helping teams connect context, verify decisions, and coordinate the next move. | [Powder / Framer](https://powder.framer.website/) — paid-template screenshots; original rework |
 
 This rebrand experiment was developed collaboratively with Codex AI in
 ChatGPT, using the GPT-5.6 Terra model.

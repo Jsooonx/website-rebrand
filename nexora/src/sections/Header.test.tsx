@@ -1,13 +1,13 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Header } from "./Header";
 
 describe("Header", () => {
-  it("uses the reference navigation labels and compact get-started action", () => {
+  it("uses dossier navigation labels and a compact live-case action", () => {
     render(<Header />);
 
-    expect(screen.getByRole("link", { name: "Features" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Get started" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Workflow" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Open case" })).toBeInTheDocument();
   });
 
   it("opens and closes the mobile navigation accessibly", async () => {
@@ -18,7 +18,7 @@ describe("Header", () => {
     expect(toggle).toHaveAttribute("aria-expanded", "false");
     await user.click(toggle);
     expect(toggle).toHaveAttribute("aria-expanded", "true");
-    expect(screen.getByRole("navigation", { name: /mobile/i })).toBeVisible();
+    await waitFor(() => expect(screen.getByRole("navigation", { name: /mobile/i })).toBeVisible());
 
     await user.keyboard("{Escape}");
     expect(toggle).toHaveAttribute("aria-expanded", "false");

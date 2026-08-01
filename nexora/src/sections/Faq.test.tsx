@@ -4,16 +4,12 @@ import { describe, expect, it } from "vitest";
 import { Faq } from "./Faq";
 
 describe("Faq", () => {
-  it("keeps one answer open and resets to the first item after changing category", async () => {
+  it("shows one field-notes index whose answers can be opened and closed", async () => {
     const user = userEvent.setup();
     render(<Faq />);
 
-    const firstQuestion = screen.getByRole("button", {
-      name: "What is NEXORA and how does it work?",
-    });
-    const secondQuestion = screen.getByRole("button", {
-      name: "How long does it take to set up?",
-    });
+    const firstQuestion = screen.getByRole("button", { name: "What is Nexora?" });
+    const secondQuestion = screen.getByRole("button", { name: /how does Nexora validate/i });
 
     expect(firstQuestion).toHaveAttribute("aria-expanded", "true");
     expect(secondQuestion).toHaveAttribute("aria-expanded", "false");
@@ -23,12 +19,11 @@ describe("Faq", () => {
     expect(firstQuestion).toHaveAttribute("aria-expanded", "false");
     expect(secondQuestion).toHaveAttribute("aria-expanded", "true");
 
-    await user.click(
-      screen.getByRole("tab", { name: "AI & capabilities" }),
-    );
+    await user.click(secondQuestion);
 
-    expect(
-      screen.getByRole("button", { name: "How does NEXORA verify answers?" }),
-    ).toHaveAttribute("aria-expanded", "true");
+    expect(secondQuestion).toHaveAttribute("aria-expanded", "false");
+    expect(screen.getByText(/keep moving/i)).toBeInTheDocument();
+    expect(screen.queryByRole("tablist", { name: "FAQ categories" })).not.toBeInTheDocument();
+
   });
 });

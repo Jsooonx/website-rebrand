@@ -1,14 +1,14 @@
 import { useLenis } from "./hooks/useLenis";
-import { Capabilities } from "./sections/Capabilities";
+import { AdoptionPaths } from "./sections/AdoptionPaths";
 import { ClosingCta } from "./sections/ClosingCta";
 import { Faq } from "./sections/Faq";
 import { Footer } from "./sections/Footer";
 import { Header } from "./sections/Header";
 import { Hero } from "./sections/Hero";
-import { Integrations } from "./sections/Integrations";
-import { Pricing } from "./sections/Pricing";
-import { Testimonials } from "./sections/Testimonials";
-import { WhyNexora } from "./sections/WhyNexora";
+import { ScenarioMosaic } from "./sections/ScenarioMosaic";
+import { ScenarioStories } from "./sections/ScenarioStories";
+import { SystemsIndex } from "./sections/SystemsIndex";
+import { WorkflowChapters } from "./sections/WorkflowChapters";
 
 export default function App() {
   useLenis();
@@ -18,12 +18,12 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Capabilities />
-        <WhyNexora />
-        <Integrations />
-        <Pricing />
+        <WorkflowChapters />
+        <ScenarioMosaic />
+        <SystemsIndex />
+        <AdoptionPaths />
         <Faq />
-        <Testimonials />
+        <ScenarioStories />
         <ClosingCta />
       </main>
       <Footer />

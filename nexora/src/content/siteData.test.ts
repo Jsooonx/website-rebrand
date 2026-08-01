@@ -1,35 +1,43 @@
 import {
-  faqGroups,
-  plans,
-  testimonials,
-  workspaceModes,
+  adoptionPaths,
+  caseFile,
+  fieldNotes,
+  practiceScenarios,
+  scenarioStories,
+  systemRows,
+  workflowChapters,
 } from "./siteData";
 
 function expectUniqueIds(items: readonly { id: string }[]) {
   expect(new Set(items.map((item) => item.id)).size).toBe(items.length);
 }
 
-describe("NEXORA content model", () => {
-  it("contains the approved section content with unique identities", () => {
-    expect(workspaceModes).toHaveLength(4);
-    expect(plans).toHaveLength(3);
-    expect(faqGroups).toHaveLength(3);
-    expect(testimonials).toHaveLength(3);
+describe("Nexora operational dossier content", () => {
+  it("models one case from evidence through an accountable action", () => {
+    expect(caseFile.sources).toHaveLength(3);
+    expect(caseFile.conclusion).toMatch(/verified/i);
+    expect(caseFile.action).toMatch(/owner/i);
 
-    [
-      workspaceModes,
-      plans,
-      faqGroups,
-      testimonials,
-    ].forEach(expectUniqueIds);
+    expect(workflowChapters.map((chapter) => chapter.id)).toEqual([
+      "collect",
+      "validate",
+      "act",
+    ]);
   });
 
-  it("uses the approved capability sequence", () => {
-    expect(workspaceModes.map((tab) => tab.label)).toEqual([
-      "Ask",
-      "Verify",
-      "Execute",
-      "Measure",
+  it("provides unique fictional records for each dossier section", () => {
+    [
+      practiceScenarios,
+      systemRows,
+      adoptionPaths,
+      fieldNotes,
+      scenarioStories,
+    ].forEach(expectUniqueIds);
+
+    expect(adoptionPaths.map((path) => path.name)).toEqual([
+      "Explore",
+      "Coordinate",
+      "Govern",
     ]);
   });
 });

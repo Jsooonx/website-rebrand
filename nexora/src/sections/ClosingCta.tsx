@@ -1,27 +1,28 @@
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { Reveal } from "../components/ui/Reveal";
-import { WorkspaceShell } from "../components/visuals/WorkspaceShell";
-
-const trustSignals = ["Set up in minutes", "Connected context", "Approvals included"] as const;
+import { ArrowButton } from "../components/ui/ArrowButton";
+import { closingCase } from "../content/siteData";
+import { useEntrance } from "../hooks/useEntrance";
 
 export function ClosingCta() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const reducedMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end end"] });
-  const dashboardY = useTransform(scrollYProgress, [0.18, 1], ["5%", "-7%"]);
-
-  return <section id="briefing" ref={sectionRef} className="closing-scene" aria-labelledby="closing-title">
-    <div className="closing-scene__inner">
-      <div className="closing-copy">
-        <Reveal><div className="eyebrow"><span />Ready when you are</div></Reveal>
-        <Reveal delay={0.07}><h2 id="closing-title">Get started today</h2></Reveal>
-        <Reveal delay={0.14}><p>NEXORA is easy to set up, maintain, and use. Bring the tools your team already relies on and move work forward in one place.</p></Reveal>
-        <Reveal delay={0.2}><a className="closing-copy__cta" href="mailto:hello@nexora.example">Get a demo <span aria-hidden="true">→</span></a></Reveal>
-        <ul className="closing-trust">{trustSignals.map((signal, index) => <motion.li key={signal} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.4, delay: 0.22 + index * 0.05 }}><span>•</span>{signal}</motion.li>)}</ul>
+  const entrance = useEntrance<HTMLElement>();
+  return (
+    <section ref={entrance.ref} id="briefing" className={`launch-section ${entrance.className}`} aria-labelledby="closing-title">
+      <div className="launch-panel">
+        <div className="launch-panel__copy entrance-item">
+          <p className="dossier-kicker"><span /> Close the loop / 09</p>
+          <h2 id="closing-title">Turn questions<br />into next moves.</h2>
+          <p>Follow a request from its first signal to a decision people can inspect and an action someone can own.</p>
+          <ArrowButton href="#top" className="launch-panel__cta">Open the live case</ArrowButton>
+        </div>
+        <article className="resolved-case entrance-item" aria-labelledby="resolved-case-title">
+          <header><span>{closingCase.label}</span><strong>Closed / 16:40</strong></header>
+          <div>
+            <p>NX—CASE 001</p>
+            <h3 id="resolved-case-title">{closingCase.title}</h3>
+            <p>{closingCase.detail}</p>
+          </div>
+          <footer><span>Evidence checked</span><span>Owner assigned</span><span>Review scheduled</span></footer>
+        </article>
       </div>
-      <motion.div className="closing-brief" style={{ y: reducedMotion ? 0 : dashboardY }}><WorkspaceShell mode="ask" density="closing" /></motion.div>
-    </div>
-    <div className="closing-scene__fade" aria-hidden="true" />
-  </section>;
+    </section>
+  );
 }
