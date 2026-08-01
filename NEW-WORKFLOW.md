@@ -5,6 +5,22 @@ reference. Each project declares its reference license context and fidelity
 mode before section work begins. Original branding, content, assets, and
 implementation are always required.
 
+## Stackframe context
+
+These website rebrand projects are built as potential public templates for
+Stackframe, a library of reference-informed website prompts. Each website is
+an original, reusable demonstration that shows how to translate a visual
+reference into a distinct brand and functional page concept.
+
+The target audience may use the finished project as a starting point for their
+own work. Therefore every project must keep its own brand, copy, assets, code,
+and product fiction separate from the supplied reference. The reference is
+quality context and design input, not a source package to redistribute.
+
+At the beginning of a new website session, include this context plus the
+project name, reference status, reference mode, audience, conversion goal,
+and intended public-template status.
+
 ## 0. Declare the reference boundary first
 
 Record whether the reference is free, paid, supplied privately, or unknown;

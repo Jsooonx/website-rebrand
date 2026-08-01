@@ -3,6 +3,18 @@
 An exploration project for reimagining portfolio and studio websites through
 fresh brand identities, visual directions, and responsive implementations.
 
+This repository is the working collection for Stackframe, a public library of
+reference-informed website templates and prompts. Each website is developed
+as an original rebrand that can become a reusable public template: references
+guide the approved visual direction, while brand, copy, assets, code, and
+product concepts remain original.
+
+Start each new website in its own chat session and declare its reference
+status (`free`, `paid`, supplied privately, or unknown), reference mode
+(`Fidelity` or `Rework`), and intended public-template status. Follow
+[`NEW-WORKFLOW.md`](./NEW-WORKFLOW.md) for the complete image → discussion →
+documentation → implementation loop.
+
 ## Websites
 
 | # | Website | Description | Reference |
